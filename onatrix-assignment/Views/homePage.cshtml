@@ -29,20 +29,22 @@
     <div class="container">
         <div class="content">
             <div class="headline">
-                <h6>@Model.Value("aboutHeadline")</h6>
-                <h2>@Model.Value("aboutSectionTitle")</h2>
+                <h6>@Model?.Value("aboutHeadline")</h6>
+                <h2>@Model?.Value("aboutSectionTitle")</h2>
             </div>
-            <blockquote class="quote">“@Model.Value("aboutQuote")”</blockquote>
-            <p>@Model.Value("aboutText")</p>
+            <blockquote class="quote">“@Model?.Value("aboutQuote")”</blockquote>
+            <p>@Model?.Value("aboutText")</p>
             <div class="signature-container">
                 <div class="signature">
                     <img class="signature-image" src="@signatureImage" alr=""/>
                     <div class="clarification">
-                        <p class="name">@Model.Value("aboutSignatureText")</p>
+                        <p class="name">@Model?.Value("aboutSignatureText")</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
 
 
