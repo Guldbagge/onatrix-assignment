@@ -1,8 +1,18 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 @{
-	Layout = null;
-  var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Ontrix - Financial Solutions for Your Business" : "Ontrix - Financial Solutions for Your Business";
+    Layout = null;
+
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var siteName = settings?.Value<string>("siteName") ?? "Onatrix";
+    var siteTagline = settings?.Value<string>("siteTagline") ?? "Financial Solutions";
+
+
+
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | {siteName} - {siteTagline}" : $"{siteName} - {siteTagline}";
+    @* var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Ontrix - Financial Solutions for Your Business" : "Ontrix - Financial Solutions for Your Business"; *@
 }
 
 <!DOCTYPE html>
