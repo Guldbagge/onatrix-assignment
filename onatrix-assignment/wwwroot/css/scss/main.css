@@ -1246,10 +1246,18 @@ h6 {
   align-items: center;
   height: 40px;
 }
-#header .background-primary .container .text p {
-  padding: 0;
-  color: var(--color-light);
-  font-size: 0.8rem;
+#header .background-primary .container .text {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #header .background-primary .container .text {
+    display: block;
+  }
+  #header .background-primary .container .text p {
+    padding: 0;
+    color: var(--color-light);
+    font-size: 0.8rem;
+  }
 }
 #header .background-primary .container .social-links {
   display: flex;
@@ -1267,18 +1275,31 @@ h6 {
   align-items: center;
   height: 60px;
 }
-#header .background-light .container .logo a img {
-  height: 80%;
-  width: 80%;
+#header .background-light .container .logo {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #header .background-light .container .logo {
+    display: block;
+  }
+  #header .background-light .container .logo a img {
+    height: 80%;
+    width: 80%;
+  }
 }
 #header .background-light .container .links {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
 }
 #header .background-light .container .links a {
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
+}
+@media (min-width: 1400px) {
+  #header .background-light .container .links {
+    gap: 3rem;
+  }
 }
 #header .background-light .container .search-icon {
   justify-self: end;
@@ -1287,6 +1308,73 @@ h6 {
   color: var(--color-primary);
 }
 
+/*#header{
+
+    .background-primary{
+        background-color: var(--color-primary);
+
+        .container{
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+
+            .text{
+                p{
+                    padding: 0; 
+                    color: var(--color-light); 
+                    font-size: 0.8rem;
+                }
+            }
+            .social-links{
+                display: flex;
+                gap: 1rem;
+                a{
+                    i{color: var(--color-light);}
+                }
+            }
+        }
+    }
+
+    .background-light{
+        background-color: var(--color-light);
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            height: 60px; 
+
+            .logo{
+                a{
+                    img{
+                        height: 80%;
+                        width: 80%;
+                    }
+                }
+            }
+
+            .links{
+                a{
+                    color: var(--color-primary);
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+                display: flex;
+                gap: 3rem;
+            }
+            .search-icon{
+                justify-self: end;
+                a{
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+}
+*/
 #footer .container {
   display: flex;
   justify-content: start;
