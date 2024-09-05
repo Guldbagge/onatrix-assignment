@@ -1,4 +1,4 @@
-#heru-slider{
+#heru-slider {
 
     .background {
         display: none;
@@ -12,14 +12,13 @@
         }
 
         @media (min-width: 1700px) {
-            background-size: 1700px auto; 
-            background-position: center; 
+            background-size: 1700px auto;
+            background-position: center;
         }
-
     }
 
-    .container{
-        @include desktop{
+    .container {
+        @include desktop {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -31,20 +30,22 @@
                 width: 50%;
             }
 
-            .headline{
+            .headline {
+                margin-top: 5rem;
                 line-height: 110%
             }
-            .ingress{
+
+            .ingress {
                 margin-top: 1.5rem;
             }
 
-            div{
-                .btn{
+            div {
+                .btn {
                     margin-bottom: 3rem;
                 }
             }
-        }  
-    } 
+        }
+    }
 }
 
 #about-us{
