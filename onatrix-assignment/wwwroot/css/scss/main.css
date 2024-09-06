@@ -2026,7 +2026,6 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6rem;
 }
 #map .container .request-box {
   position: absolute;
@@ -2045,4 +2044,7 @@ h6 {
   #map .container .request-box .request-text {
     width: 50%;
   }
+}
+#map .bg-gray {
+  height: 6rem;
 }

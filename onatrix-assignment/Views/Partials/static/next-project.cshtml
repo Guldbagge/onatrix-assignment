@@ -16,10 +16,12 @@
     var nextProjectImageHuman = settings?.Value<IPublishedContent>("nextProjectImageHuman")?.Url() ?? "";
     var nextProjectImageBackground = settings?.Value<IPublishedContent>("nextProjectImageBackground")?.Url() ?? "";
     var nextProjectImageDot = settings?.Value<IPublishedContent>("nextProjectImageDot")?.Url() ?? "";
-
+    
+  var currentPageUrl = Model.Url();
+    var isContactPage = currentPageUrl.Contains("/contact");
 }
 
-<section id="next-project" class="bg-gray">
+<section id="next-project" class="@(isContactPage ? "" : "bg-gray")">
     <div class="container">
 
         <div class="images">
