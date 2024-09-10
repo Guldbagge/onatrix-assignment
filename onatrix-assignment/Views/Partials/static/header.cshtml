@@ -19,7 +19,13 @@
     var headerLinkText4 = settings?.Value<string>("headerLinkText4") ?? "";
 
     var siteLogo = settings?.Value<IPublishedContent>("siteLogo")?.Url() ?? "";
-
+    
+    
+    var currentPageUrl = Model.Url().TrimEnd('/');
+    var headerLink1Trimmed = headerLink1.TrimEnd('/');
+    var headerLink2Trimmed = headerLink2.TrimEnd('/');
+    var headerLink3Trimmed = headerLink3.TrimEnd('/');
+    var headerLink4Trimmed = headerLink4.TrimEnd('/');
 
 }
 
@@ -48,12 +54,12 @@
             <div class="logo">
                 <a href="/"><img src="@siteLogo" alt="Logo Image"></a>
             </div>
-            <div class="links">
-                <a href="@headerLink1">@headerLinkText1</a>
-                <a href="@headerLink2">@headerLinkText2</a>
-                <a href="@headerLink3">@headerLinkText3</a>
-                <a href="@headerLink4">@headerLinkText4</a>
-            </div>
+<div class="links">
+    <a href="@headerLink1" class="@(currentPageUrl == headerLink1Trimmed ? "active" : "")">@headerLinkText1</a>
+    <a href="@headerLink2" class="@(currentPageUrl == headerLink2Trimmed ? "active" : "")">@headerLinkText2</a>
+    <a href="@headerLink3" class="@(currentPageUrl == headerLink3Trimmed ? "active" : "")">@headerLinkText3</a>
+    <a href="@headerLink4" class="@(currentPageUrl == headerLink4Trimmed ? "active" : "")">@headerLinkText4</a>
+</div>
             <div class="search-icon">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>

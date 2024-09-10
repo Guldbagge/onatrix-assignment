@@ -1326,6 +1326,10 @@ h6 {
   font-weight: 600;
   text-decoration: none;
 }
+#header .background-light .container .links a.active {
+  color: var(--color-secondary);
+  font-weight: bold;
+}
 @media (min-width: 1400px) {
   #header .background-light .container .links {
     gap: 3rem;
