@@ -8,14 +8,17 @@
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
     <Content Remove="wwwroot\css\scss\sections\_contact.scss" />
+    <Content Remove="wwwroot\css\scss\sections\_services.scss" />
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="compilerconfig.json" />
     <_ContentIncludedByDefault Remove="wwwroot\css\scss\sections\_contact.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\scss\sections\_services.scss" />
   </ItemGroup>
   <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\css\scss\sections\_contact.scss" />
+    <None Include="wwwroot\css\scss\sections\_services.scss" />
   </ItemGroup>
 
   <ItemGroup>
