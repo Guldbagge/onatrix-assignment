@@ -18,7 +18,8 @@
     var headerLink4 = settings?.Value<string>("headerLink4") ?? "";
     var headerLinkText4 = settings?.Value<string>("headerLinkText4") ?? "";
 
-    var siteLogotype = settings?.Value<IPublishedContent>("siteLogotype")?.Url() ?? "";
+    var siteLogo = settings?.Value<IPublishedContent>("siteLogo")?.Url() ?? "";
+
 
 }
 
@@ -45,7 +46,7 @@
     <div class="background-light">
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="@siteLogotype" alt="Logo Image"></a>
+                <a href="/"><img src="@siteLogo" alt="Logo Image"></a>
             </div>
             <div class="links">
                 <a href="@headerLink1">@headerLinkText1</a>

@@ -1505,52 +1505,57 @@ h6 {
 #our-services {
   padding-top: 6rem;
 }
-#our-services .bg-gray {
+#our-services .bg {
   padding-top: 1rem;
   padding-bottom: 6rem;
 }
-#our-services .bg-gray .container h6 {
+#our-services .bg .container h6 {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
 }
-#our-services .bg-gray .container h2 {
+#our-services .bg .container h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
-#our-services .bg-gray .container .solution {
+#our-services .bg .container .solution {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
   margin-top: 3rem;
 }
 @media (min-width: 768px) {
-  #our-services .bg-gray .container .solution {
+  #our-services .bg .container .solution {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1400px) {
-  #our-services .bg-gray .container .solution {
+  #our-services .bg .container .solution {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-#our-services .bg-gray .container .solution a {
+#our-services .bg .container .solution a {
   text-decoration: none;
   color: var(--color-primary);
   background-color: var(--color-light);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-#our-services .bg-gray .container .solution a .solution-item h5 {
+#our-services .bg .container .solution a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+#our-services .bg .container .solution a .solution-item h5 {
   padding: 1rem;
   margin: 0;
 }
-#our-services .bg-gray .container .solution a .solution-item .image img {
+#our-services .bg .container .solution a .solution-item .image img {
   width: 100%;
   height: auto;
 }
-#our-services .bg-gray .container .solution a .solution-item p {
+#our-services .bg .container .solution a .solution-item p {
   padding: 1rem;
 }
 
@@ -1680,6 +1685,11 @@ h6 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+#our-projects .projects .project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 #our-projects .projects .project .image {
   width: 100%;
@@ -2047,4 +2057,94 @@ h6 {
 }
 #map .bg-gray {
   height: 6rem;
+}
+
+#our-services {
+  padding-top: 3rem;
+}
+#our-services .bg {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+#our-services .bg .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#our-services .bg .container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#our-services .bg .container .solution {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  #our-services .bg .container .solution {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1400px) {
+  #our-services .bg .container .solution {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#our-services .bg .container .solution a {
+  text-decoration: none;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  border: 1px solid var(--color-gray);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+#our-services .bg .container .solution a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+#our-services .bg .container .solution a .solution-item h5 {
+  padding: 1rem;
+  margin: 0;
+}
+#our-services .bg .container .solution a .solution-item .image img {
+  width: 100%;
+  height: auto;
+}
+#our-services .bg .container .solution a .solution-item p {
+  padding: 1rem;
+}
+
+.pagnaition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.pagnaition a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 999px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.pagnaition a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.pagnaition .prev {
+  border: none;
+  color: var(--color-gray);
+}
+.pagnaition .two {
+  border: none;
+}
+.pagnaition .next {
+  border: none;
 }
