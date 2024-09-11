@@ -5,16 +5,23 @@
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
-    var servicesBannerBackroundImage = Model?.Value<IPublishedContent>("servicesBannerBackroundImage")?.Url() ?? "";
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+    var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";     
+    var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";  
+    var servicesBannerLink1 = settings?.Value<string>("servicesBannerLink1") ?? "";             
+
 }
+
 
 <section id="contact" class="banner bg-gray">
     <div class="background"> 
-        <img src="@servicesBannerBackroundImage" alt="Backround image">
+        <img src="@servicesBannerBackground" alt="Backround image">
         <div class="content">
             <h2>@Model?.Value("servicesBannerHeadline")</h2>
             <div class="links">
-                <a class="home" href="@Model?.Value("servicesBannerLink1")">@Model?.Value("servicesBannerLinkText1")</a>
+                <a class="home" href="@servicesBannerLink1">@servicesBannerLinkText1</a>
                     <div class="chevron"><i class="fa-regular fa-chevron-right"></i></div>
                 <a class="activ" href="@Model?.Value("servicesBannerLink2")">@Model?.Value("servicesBannerLinkText2")</a>
             </div>

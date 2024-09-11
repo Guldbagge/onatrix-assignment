@@ -1,0 +1,85 @@
+﻿#solution-item {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .content {
+            margin-top: 5rem;
+
+            @include desktop {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                gap: 3rem;
+            }
+
+            .about-us {
+                flex: 1;
+                margin-bottom: 2rem;
+
+                .image {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                p {
+                    margin-bottom: 1rem;
+                    margin-top: 1rem;
+                    line-height: 1.5;
+                }
+
+                .bg-primary {
+                    position: relative;
+                    z-index: 1;
+                    padding: 2rem;
+
+                    h4 {
+                        color: var(--color-secondary);
+                    }
+
+                    .image {
+                        width: 50%;
+                        height: auto;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            .main-content {
+                @include desktop {
+                    flex: 2;
+                    border-left: 1px solid var(--color-gray);
+                    padding-left: 3rem;
+                }
+
+                .image {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                h4 {
+                    margin-top: 2rem;
+                }
+
+                ul {
+                    li {
+                        line-height: 2;
+                    }
+                }
+
+                p {
+                    line-height: 2;
+                }
+            }
+        }
+    }
+}
