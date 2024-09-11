@@ -38,7 +38,11 @@
     <div class="container">
         <div class="content">
 
-            @await Html.PartialAsync("partials/static/about-us.cshtml")
+            <nav class="about-us">
+                 @await Html.PartialAsync("partials/static/about-us.cshtml")
+
+                @await Html.PartialAsync("partials/static/we-help.cshtml")
+            </nav>
 
             <div class="main-content">
 
