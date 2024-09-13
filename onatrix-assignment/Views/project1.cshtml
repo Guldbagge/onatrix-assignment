@@ -1,0 +1,147 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+    var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";     
+    var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";  
+    var servicesBannerLink1 = settings?.Value<string>("servicesBannerLink1") ?? "";    
+    
+}
+
+
+<section id="contact" class="banner bg-gray">
+    <div class="background"> 
+        <img src="@servicesBannerBackground" alt="Backround image">
+        <div class="content">
+            <h2>@Model?.Value("servicesBannerHeadline")</h2>
+            <div class="links">
+                <a class="home" href="@servicesBannerLink1">@servicesBannerLinkText1</a>
+                    <div class="chevron"><i class="fa-regular fa-chevron-right"></i></div>
+                <a class="home" href="@Model?.Value("projectsBannerText2")">@Model?.Value("projectsBannerLinkText2")</a>
+                <div class="chevron"><i class="fa-regular fa-chevron-right"></i></div>
+                <a class="activ" href="@Model?.Value("servicesBannerLink3")">@Model?.Value("servicesBannerLinkText3")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project-details">
+    <div class="container">
+
+        <div class="project">
+            <p class="date"><i class="fa-regular fa-calendar-days"></i> June 15, 2024</p>
+            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at enim vestibulum, dapibus elit quis, pellentesque justo. Proin sit amet libero quis orci convallis mollis.</p>
+            <div class="image">
+                <img src="images/home/pj1.png" alt="">
+            </div>
+            <h4>Suggestions for you</h4>
+            <div class="list">
+                <ul>
+                    <li>Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.</li>
+                    <li>Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue</li>
+                    <li>In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.</li>
+                </ul>
+            </div>
+            <div class="image-text">
+                <div class="image-smal">
+                    <img src="images/projects/Img-47-1.png" alt="">
+                </div>
+                <div class="text">
+                    <h4>Nunc facilisis ante quis gravida mollis</h4>
+                    <p>
+                        Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus.
+                        Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum
+                    </p>
+                </div>
+            </div>
+
+            <h4>Nullam at blandit felis, ut efficitur lorem. Nulla pharetra turpis eget dictum condimentum</h4>
+            <p>
+                <p>
+                    Cras posuere tristique urna sodales laoreet. Phasellus nibh nunc, porttitor vitae elementum eget, condimentum lobortis metus. Aenean imperdiet suscipit dui
+
+                    Integer quis massa sit amet diam feugiat molestie. Morbi egestas arcu eu sapien accumsan, et tempor velit viverra. Ut varius euismod malesuada. Vestibulum consectetur justo turpis. Vivamus varius purus consequat urna maximus molestie. Sed facilisis maximus quam id pretium. Donec ac orci vel quam semper tristique. Maecenas facilisis, urna sed congue pellentesque, justo augue semper nulla
+                
+                    Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.
+                </p>
+            </p>
+
+            <div class="image">
+                <img src="images/home/pj1.png" alt="">
+            </div>
+
+            <h4>Nullam at blandit felis, ut efficitur lorem. Nulla pharetra turpis eget dictum condimentum</h4>
+            <p>Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus. Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum
+
+                Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.
+            </p>
+
+            <div class="tags">
+                <h4>Tags</h4>
+                <a href="#" class="tag">Business</a>
+                <a href="#" class="tag">Consulting</a>
+                <a href="#" class="tag">Onatrix</a>
+            </div>
+            
+        </div>
+
+        
+        
+        <div class="nav-content">
+            <div class="recent-projects">
+                <div class="recent-projects-content">
+                    <h4>Recent projects</h4>
+                    <a href="@Model.Value("ourProjectsProject1Link")">
+                        <div class="image">
+                            <img src="@ourProjectsProject1Image" alt="">
+                        </div>
+                        <div class="text">
+                            <h6>@Model.Value("ourProjectsProject1Headline")</h6>
+                            <p class="date"><i class="fa-regular fa-calendar-days"></i> @Model.Value("ourProjectsProject1Date")</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="tags">
+                @await Html.PartialAsync("partials/static/tags.cshtml")     
+            </div>
+
+            <div class="bg-primary"></div>
+
+        </div>
+    </div>
+
+
+                <a href="@Model.Value("ourProjectsProject1Link")">
+                <div class="image">
+                    <img src="@ourProjectsProject1Image" alt="">
+                </div>
+                
+                <div class="project-text">
+                    <div class="text">
+                        <h4>@Model.Value("ourProjectsProject1Headline")</h4>
+                        <p class="date"><i class="fa-regular fa-calendar-days"></i> @Model.Value("ourProjectsProject1Date")</p>
+                        <p>@Model.Value("ourProjectsProject1Text")</p>
+                    </div>
+                    <div class="button">
+                        <div class="btn-light">
+                            @Model.Value("ourProjectsProject1Button") <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+    
+    
+</section>
+
+
+
+
+
+@await Html.PartialAsync("partials/static/next-project.cshtml")
