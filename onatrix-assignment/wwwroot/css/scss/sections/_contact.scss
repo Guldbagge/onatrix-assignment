@@ -1,17 +1,33 @@
 ﻿#map {
+    .map {
+        iframe {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+
     position: relative;
 
     .container {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 6rem;
 
         .request-box {
-            position: absolute;
+
+            @include desktop {
+                position: absolute;
+            }
+
             display: flex;
-            align-items: start;
+            align-items: center;
             justify-content: center;
-            top: -500px;
+            flex-direction: column;
+            top: -600px;
             min-height: 560px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -23,12 +39,33 @@
                     width: 50%;
                 }
             }
-            // .request-form{
-            // }
-        }
-    }
 
-    .bg-gray {
-        height: 6rem;
+            .request-form {
+                width: 100%;
+                padding: 2rem;
+
+                form {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+
+                    .form-input-group {
+                        display: flex;
+                        flex-direction: column;
+
+                        input {
+                            width: 100%;
+                            margin-bottom: 0.5rem;
+                            height: 52px;
+                        }
+                    }
+
+                    .form-button {
+                        grid-column: span 2;
+                        justify-self: center;
+                    }
+                }
+            }
+        }
     }
 }
