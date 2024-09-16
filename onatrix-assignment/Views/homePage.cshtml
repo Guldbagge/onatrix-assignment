@@ -60,7 +60,24 @@
         </div>
         
         <div class="form-container">
-            <div class="box"></div>
+                <form onsubmit="handleContactFormSubmit(event)" novalidate>
+                    <div class="form-input-group">
+                        <label class="form-label" for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Enter your name" class="form-input" >
+                        <span class="form-input-error">You must enter your name</span>
+                    </div>
+                    <div class="form-input-group">
+                        <label class="form-label" for="email">E-mail address</label>
+                        <input id="email" name="email" type="email" placeholder="Enter your e-mail address" class="form-input" >
+                        <span class="form-input-error">You must enter a valid e-mail address</span>
+                    </div>
+                    <div class="form-input-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message..." class="form-textarea"></textarea>
+                        <span class="form-input-error">You must enter a message</span>
+                    </div>
+                    <button type="submit" class="form-button btn-submit">SEND</button>
+                </form>
         </div>
     </div>
 </section>

@@ -2038,19 +2038,33 @@ h6 {
 #map {
   position: relative;
 }
+#map .map iframe {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #map .map iframe {
+    display: block;
+  }
+}
 #map .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 6rem;
 }
 #map .container .request-box {
-  position: absolute;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  top: -500px;
+  flex-direction: column;
+  top: -600px;
   min-height: 560px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1400px) {
+  #map .container .request-box {
+    position: absolute;
+  }
 }
 #map .container .request-box .request-text {
   text-align: center;
@@ -2061,8 +2075,27 @@ h6 {
     width: 50%;
   }
 }
-#map .bg-gray {
-  height: 6rem;
+#map .container .request-box .request-form {
+  width: 100%;
+  padding: 2rem;
+}
+#map .container .request-box .request-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+#map .container .request-box .request-form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#map .container .request-box .request-form form .form-input-group input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 52px;
+}
+#map .container .request-box .request-form form .form-button {
+  grid-column: span 2;
+  justify-self: center;
 }
 
 #our-services {
