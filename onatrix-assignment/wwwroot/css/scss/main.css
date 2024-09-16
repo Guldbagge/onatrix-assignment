@@ -2070,32 +2070,55 @@ h6 {
   text-align: center;
   margin-top: 3rem;
 }
+#map .container .request-box .request-text h5 {
+  color: var(--color-secondary);
+}
+#map .container .request-box .request-text p {
+  font-style: oblique;
+}
 @media (min-width: 1400px) {
   #map .container .request-box .request-text {
-    width: 50%;
+    width: 52%;
   }
 }
 #map .container .request-box .request-form {
   width: 100%;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
-#map .container .request-box .request-form form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+@media (min-width: 1400px) {
+  #map .container .request-box .request-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }
 #map .container .request-box .request-form form .form-input-group {
   display: flex;
   flex-direction: column;
 }
-#map .container .request-box .request-form form .form-input-group input {
+#map .container .request-box .request-form form .form-input-group input, #map .container .request-box .request-form form .form-input-group select, #map .container .request-box .request-form form .form-input-group textarea {
   width: 100%;
   margin-bottom: 0.5rem;
   height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#map .container .request-box .request-form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
 #map .container .request-box .request-form form .form-button {
   grid-column: span 2;
   justify-self: center;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 
 #our-services {

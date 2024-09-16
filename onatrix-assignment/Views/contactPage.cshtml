@@ -72,7 +72,19 @@
                         <textarea id="message" name="message" placeholder="Enter your message..." class="form-textarea"></textarea>
                         <span class="form-input-error">You must enter a message</span>
                     </div>
-                    <button type="submit" class="form-button btn-submit btn btn-primary">SEND</button>
+
+                    <div class="form-input-group">
+                        <label class="form-label" for="dropdown">Select an option</label>
+                        <select id="dropdown" name="dropdown" class="form-input">
+                            <option value="">Choose an option</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <span class="form-input-error">You must select an option</span>
+                    </div>
+
+                    <button type="submit" class="form-button btn-submit btn btn-primary">Submit</button>
                 </form>
             </div>
 
