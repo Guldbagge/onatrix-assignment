@@ -84,15 +84,15 @@
                             color: red;
                             font-size: 0.8rem;
                             margin-top: 0.5rem;
-                            display: none; /* Göm elementet från början */
+                            display: none;
                         }
 
                         .form-invalid-input {
-                            display: block; /* Visa elementet när det är ett fel */
+                            display: block;
                         }
 
                         .form-valid-input {
-                            display: none; /* Göm varningen när input är korrekt */
+                            display: none;
                         }
                     }
 
@@ -102,6 +102,20 @@
                         font-weight: 600;
                         font-family: 'Poppins', sans-serif;
                     }
+                }
+
+                .success-message {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #5cb85c;
+                    color: var(--color-light);
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-align: center;
+                    margin-top: 1rem;
+                    height: 52px;
+                    border-radius: 5px;
                 }
             }
         }

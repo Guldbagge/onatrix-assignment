@@ -22,18 +22,21 @@ namespace onatrix_assignment.Controllers
             {
                 ViewData["name"] = form.Name;
                 ViewData["email"] = form.Email;
-                ViewData["message"] = form.Message;
+                ViewData["dropdown"] = form.Dropdown;
+                ViewData["phone"] = form.Phone;
 
                 ViewData["error_name"] = string.IsNullOrEmpty(form.Name);
                 ViewData["error_email"] = string.IsNullOrEmpty(form.Email);
-                ViewData["error_message"] = string.IsNullOrEmpty(form.Message);
+                ViewData["error_dropdown"] = string.IsNullOrEmpty(form.Dropdown);
+                ViewData["error_phone"] = string.IsNullOrEmpty(form.Phone);
 
                 return CurrentUmbracoPage();
             }
 
-            TempData["success"] = "form submitted successfully.";
+            TempData["success"] = "Form submitted successfully.";
             return RedirectToCurrentUmbracoPage();
         }
+
 
     }
 }

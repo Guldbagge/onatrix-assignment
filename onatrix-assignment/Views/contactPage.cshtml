@@ -19,7 +19,9 @@
 
     bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
     bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
-    bool.TryParse(ViewData["error_message"]?.ToString()!, out bool error_message);
+    // bool.TryParse(ViewData["error_message"]?.ToString()!, out bool error_message);
+    bool.TryParse(ViewData["error_phone"]?.ToString()!, out bool error_phone);
+    bool.TryParse(ViewData["error_dropdown"]?.ToString()!, out bool error_dropdown);
 
 }
 
@@ -64,34 +66,28 @@
                 @using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post, new { id = "contact-form" }))
                 {
                     <div class="form-input-group">
-                        <label class="form-label" for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Enter your name" class="form-input" value="@ViewData["name"]">
+                        <input id="name" name="name" type="text" placeholder="Name" class="form-input" value="@ViewData["name"]">
                         <span class="form-input-error@((error_name) ? "form-invalid-input": null)">You must enter your name</span>
                     </div>
                     <div class="form-input-group">
-                        <label class="form-label" for="email">E-mail address</label>
-                        <input id="email" name="email" type="email" placeholder="Enter your e-mail address" class="form-input" value="@ViewData["email"]">
+                        <input id="phone" name="phone" type="text" placeholder="Phone" class="form-input" value="@ViewData["phone"]">
+                        <span class="form-input-error@((error_phone) ? "form-invalid-input" : null)">You must enter a valid phone number</span>
+                    </div>
+                    <div class="form-input-group">
+                        <input id="email" name="email" type="email" placeholder="Email address" class="form-input" value="@ViewData["email"]">
                         <span class="form-input-error@((error_email) ? "form-invalid-input" : null)">You must enter a valid e-mail address</span>
                     </div>
                     <div class="form-input-group">
-                        <label class="form-label" for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter your message..." class="form-textarea" @ViewData["message"]></textarea>
-                        <span class="form-input-error@((error_message) ? "form-invalid-input": null)">You must enter a message</span>
+                        <select id="dropdown" name="dropdown" class="form-input">
+                            <option value="">Financial consulting</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Maybe later">Maybe later</option>
+                        </select>
+                        <span class="form-input-error@((error_dropdown) ? "form-invalid-input" : null)">You must select an option</span>
                     </div>
-
-                    @*                     <div class="form-input-group">
-                <label class="form-label" for="dropdown">Select an option</label>
-                <select id="dropdown" name="dropdown" class="form-input">
-                <option value="">Choose an option</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-                </select>
-                <span class="form-input-error">You must select an option</span>
-                </div> *@
-                    <input type="hidden" id="scroll-position" name="scroll-position" value="0" />
-
                     <button type="submit" class="form-button btn-submit btn btn-primary">Submit</button>
+
                 }
 
                 @if (TempData["success"] != null)
