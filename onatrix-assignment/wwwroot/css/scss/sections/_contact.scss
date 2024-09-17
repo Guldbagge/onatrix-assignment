@@ -84,6 +84,15 @@
                             color: red;
                             font-size: 0.8rem;
                             margin-top: 0.5rem;
+                            display: none; /* Göm elementet från början */
+                        }
+
+                        .form-invalid-input {
+                            display: block; /* Visa elementet när det är ett fel */
+                        }
+
+                        .form-valid-input {
+                            display: none; /* Göm varningen när input är korrekt */
                         }
                     }
 

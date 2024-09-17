@@ -20,17 +20,18 @@ namespace onatrix_assignment.Controllers
         {
             if (!ModelState.IsValid)
             {
-                TempData["name"] = form.Name;
-                TempData["email"] = form.Email;
-                TempData["message"] = form.Message;
+                ViewData["name"] = form.Name;
+                ViewData["email"] = form.Email;
+                ViewData["message"] = form.Message;
 
-                TempData["error_name"] = string.IsNullOrEmpty(form.Name);
-                TempData["error_email"] = string.IsNullOrEmpty(form.Email);
-                TempData["error_message"] = string.IsNullOrEmpty(form.Message);
+                ViewData["error_name"] = string.IsNullOrEmpty(form.Name);
+                ViewData["error_email"] = string.IsNullOrEmpty(form.Email);
+                ViewData["error_message"] = string.IsNullOrEmpty(form.Message);
 
                 return CurrentUmbracoPage();
             }
 
+            TempData["success"] = "form submitted successfully.";
             return RedirectToCurrentUmbracoPage();
         }
 

@@ -15,6 +15,12 @@
     var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";
     var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";
     var servicesBannerLink1 = settings?.Value<string>("servicesBannerLink1") ?? "";
+
+
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_message"]?.ToString()!, out bool error_message);
+
 }
 
 <section id="contact" class="banner bg-gray">
@@ -55,22 +61,22 @@
 
             <div class="request-form">
 
-                @using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post))
+                @using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post, new { id = "contact-form" }))
                 {
                     <div class="form-input-group">
                         <label class="form-label" for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Enter your name" class="form-input">
-                        <span class="form-input-error">You must enter your name</span>
+                        <input id="name" name="name" type="text" placeholder="Enter your name" class="form-input" value="@ViewData["name"]">
+                        <span class="form-input-error@((error_name) ? "form-invalid-input": null)">You must enter your name</span>
                     </div>
                     <div class="form-input-group">
                         <label class="form-label" for="email">E-mail address</label>
-                        <input id="email" name="email" type="email" placeholder="Enter your e-mail address" class="form-input">
-                        <span class="form-input-error">You must enter a valid e-mail address</span>
+                        <input id="email" name="email" type="email" placeholder="Enter your e-mail address" class="form-input" value="@ViewData["email"]">
+                        <span class="form-input-error@((error_email) ? "form-invalid-input" : null)">You must enter a valid e-mail address</span>
                     </div>
                     <div class="form-input-group">
                         <label class="form-label" for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter your message..." class="form-textarea"></textarea>
-                        <span class="form-input-error">You must enter a message</span>
+                        <textarea id="message" name="message" placeholder="Enter your message..." class="form-textarea" @ViewData["message"]></textarea>
+                        <span class="form-input-error@((error_message) ? "form-invalid-input": null)">You must enter a message</span>
                     </div>
 
                     @*                     <div class="form-input-group">
@@ -83,8 +89,14 @@
                 </select>
                 <span class="form-input-error">You must select an option</span>
                 </div> *@
+                    <input type="hidden" id="scroll-position" name="scroll-position" value="0" />
 
                     <button type="submit" class="form-button btn-submit btn btn-primary">Submit</button>
+                }
+
+                @if (TempData["success"] != null)
+                {
+                    <div class="success-message">@TempData["Success"]</div>
                 }
 
             </div>
