@@ -1492,20 +1492,99 @@ h6 {
   }
 }
 #about-us .container .form-container {
-  width: 100%;
+  /*            width: 100%;
   height: 400px;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary);*/
 }
 @media (min-width: 1400px) {
   #about-us .container .form-container {
     position: absolute;
     right: 150px;
-    top: -80px;
+    top: 400px;
     z-index: 1;
     background-color: var(--color-primary);
     width: 30%;
-    height: 400px;
+    /*       height: 400px;*/
   }
+}
+#about-us .container .form-container .request-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: -600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1400px) {
+  #about-us .container .form-container .request-box {
+    position: absolute;
+  }
+}
+#about-us .container .form-container .request-box .request-text {
+  background-color: var(--color-primary);
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+}
+#about-us .container .form-container .request-box .request-text h4 {
+  color: var(--color-secondary);
+  margin: 0;
+}
+#about-us .container .form-container .request-box .request-form {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+#about-us .container .form-container .request-box .request-form p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#about-us .container .form-container .request-box .request-form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#about-us .container .form-container .request-box .request-form form .form-input-group input, #about-us .container .form-container .request-box .request-form form .form-input-group select, #about-us .container .form-container .request-box .request-form form .form-input-group textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#about-us .container .form-container .request-box .request-form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#about-us .container .form-container .request-box .request-form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#about-us .container .form-container .request-box .request-form form .form-input-group .form-valid-input {
+  display: none;
+}
+#about-us .container .form-container .request-box .request-form form .form-button {
+  width: 100%;
+  justify-self: center;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+#about-us .container .form-container .request-box .request-form .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  height: 52px;
+  border-radius: 5px;
 }
 
 #our-services {
@@ -2070,32 +2149,75 @@ h6 {
   text-align: center;
   margin-top: 3rem;
 }
+#map .container .request-box .request-text h5 {
+  color: var(--color-secondary);
+}
+#map .container .request-box .request-text p {
+  font-style: oblique;
+}
 @media (min-width: 1400px) {
   #map .container .request-box .request-text {
-    width: 50%;
+    width: 52%;
   }
 }
 #map .container .request-box .request-form {
   width: 100%;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
-#map .container .request-box .request-form form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+@media (min-width: 1400px) {
+  #map .container .request-box .request-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }
 #map .container .request-box .request-form form .form-input-group {
   display: flex;
   flex-direction: column;
 }
-#map .container .request-box .request-form form .form-input-group input {
+#map .container .request-box .request-form form .form-input-group input, #map .container .request-box .request-form form .form-input-group select, #map .container .request-box .request-form form .form-input-group textarea {
   width: 100%;
   margin-bottom: 0.5rem;
   height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#map .container .request-box .request-form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#map .container .request-box .request-form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#map .container .request-box .request-form form .form-input-group .form-valid-input {
+  display: none;
 }
 #map .container .request-box .request-form form .form-button {
   grid-column: span 2;
   justify-self: center;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+#map .container .request-box .request-form .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  height: 52px;
+  border-radius: 5px;
 }
 
 #our-services {
@@ -2218,15 +2340,69 @@ h6 {
   margin-top: 1rem;
   line-height: 1.5;
 }
-#solution-item .container .content .about-us .bg-primary {
+#solution-item .container .content .about-us .we-help-form, #solution-item .container .content .about-us .bg-primary {
   position: relative;
   z-index: 1;
   padding: 2rem;
 }
-#solution-item .container .content .about-us .bg-primary h4 {
+#solution-item .container .content .about-us .we-help-form h4, #solution-item .container .content .about-us .bg-primary h4 {
   color: var(--color-secondary);
 }
-#solution-item .container .content .about-us .bg-primary .image {
+#solution-item .container .content .about-us .we-help-form .success-message, #solution-item .container .content .about-us .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group, #solution-item .container .content .about-us .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group input, #solution-item .container .content .about-us .we-help-form .form form .form-input-group select, #solution-item .container .content .about-us .we-help-form .form form .form-input-group textarea, #solution-item .container .content .about-us .bg-primary .form form .form-input-group input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group select, #solution-item .container .content .about-us .bg-primary .form form .form-input-group textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-input-error, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-invalid-input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-valid-input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#solution-item .container .content .about-us .we-help-form .form form .btn-we-help, #solution-item .container .content .about-us .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#solution-item .container .content .about-us .we-help-form .image, #solution-item .container .content .about-us .bg-primary .image {
   width: 50%;
   height: auto;
   position: absolute;
@@ -2375,10 +2551,76 @@ h6 {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
-#projects .container .nav-content .bg-primary {
-  height: 300px;
+#projects .container .nav-content .we-help-form, #projects .container .nav-content .bg-primary {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+#projects .container .nav-content .we-help-form h4, #projects .container .nav-content .bg-primary h4 {
+  color: var(--color-secondary);
+}
+#projects .container .nav-content .we-help-form .success-message, #projects .container .nav-content .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group, #projects .container .nav-content .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group input, #projects .container .nav-content .we-help-form .form form .form-input-group select, #projects .container .nav-content .we-help-form .form form .form-input-group textarea, #projects .container .nav-content .bg-primary .form form .form-input-group input, #projects .container .nav-content .bg-primary .form form .form-input-group select, #projects .container .nav-content .bg-primary .form form .form-input-group textarea {
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-input-error, #projects .container .nav-content .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-invalid-input, #projects .container .nav-content .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-valid-input, #projects .container .nav-content .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#projects .container .nav-content .we-help-form .form form .btn-we-help, #projects .container .nav-content .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#projects .container .nav-content .we-help-form .image, #projects .container .nav-content .bg-primary .image {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 #project-details {
@@ -2526,8 +2768,73 @@ h6 {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
-#project-details .container .nav-content .bg-primary {
-  height: 300px;
+#project-details .container .nav-content .we-help-form, #project-details .container .nav-content .bg-primary {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+#project-details .container .nav-content .we-help-form h4, #project-details .container .nav-content .bg-primary h4 {
+  color: var(--color-secondary);
+}
+#project-details .container .nav-content .we-help-form .success-message, #project-details .container .nav-content .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group, #project-details .container .nav-content .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group input, #project-details .container .nav-content .we-help-form .form form .form-input-group select, #project-details .container .nav-content .we-help-form .form form .form-input-group textarea, #project-details .container .nav-content .bg-primary .form form .form-input-group input, #project-details .container .nav-content .bg-primary .form form .form-input-group select, #project-details .container .nav-content .bg-primary .form form .form-input-group textarea {
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-input-error, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-invalid-input, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-valid-input, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#project-details .container .nav-content .we-help-form .form form .btn-we-help, #project-details .container .nav-content .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#project-details .container .nav-content .we-help-form .image, #project-details .container .nav-content .bg-primary .image {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
