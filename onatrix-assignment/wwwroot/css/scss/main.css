@@ -2340,15 +2340,55 @@ h6 {
   margin-top: 1rem;
   line-height: 1.5;
 }
-#solution-item .container .content .about-us .bg-primary {
+#solution-item .container .content .about-us .we-help-form, #solution-item .container .content .about-us .bg-primary {
   position: relative;
   z-index: 1;
   padding: 2rem;
 }
-#solution-item .container .content .about-us .bg-primary h4 {
+#solution-item .container .content .about-us .we-help-form h4, #solution-item .container .content .about-us .bg-primary h4 {
   color: var(--color-secondary);
 }
-#solution-item .container .content .about-us .bg-primary .image {
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group, #solution-item .container .content .about-us .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group input, #solution-item .container .content .about-us .we-help-form .form form .form-input-group select, #solution-item .container .content .about-us .we-help-form .form form .form-input-group textarea, #solution-item .container .content .about-us .bg-primary .form form .form-input-group input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group select, #solution-item .container .content .about-us .bg-primary .form form .form-input-group textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-input-error, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-invalid-input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#solution-item .container .content .about-us .we-help-form .form form .form-input-group .form-valid-input, #solution-item .container .content .about-us .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#solution-item .container .content .about-us .we-help-form .form form .btn-we-help, #solution-item .container .content .about-us .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#solution-item .container .content .about-us .we-help-form .image, #solution-item .container .content .about-us .bg-primary .image {
   width: 50%;
   height: auto;
   position: absolute;

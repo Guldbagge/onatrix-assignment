@@ -32,7 +32,7 @@
                     line-height: 1.5;
                 }
 
-                .bg-primary {
+                .we-help-form, .bg-primary {
                     position: relative;
                     z-index: 1;
                     padding: 2rem;
@@ -40,6 +40,61 @@
                     h4 {
                         color: var(--color-secondary);
                     }
+
+                    .form {
+                        form {
+
+                            .form-input-group {
+                                display: flex;
+                                flex-direction: column;
+
+
+                                input, select, textarea {
+                                    width: 100%;
+                                    margin-bottom: 0.5rem;
+                                    height: 52px;
+                                    font-family: 'Poppins', sans-serif;
+                                    font-size: 1rem;
+                                    padding: 0.5rem;
+                                    font-style: oblique;
+                                    border: 1px solid var(--color-note);
+                                    border-radius: 5px;
+                                }
+
+                                .form-input-error {
+                                    color: red;
+                                    font-size: 0.8rem;
+                                    margin-top: 0.5rem;
+                                    display: none;
+                                }
+
+                                .form-invalid-input {
+                                    display: block;
+                                }
+
+                                .form-valid-input {
+                                    display: none;
+                                }
+                            }
+
+                            .btn-we-help {
+                                position: absolute;
+                                bottom: 2.65rem;
+                                right: 3rem;
+                                background-color: transparent;
+                                border:none;
+                                font-size: 1.8rem;
+                                color: var(--color-note);
+                                z-index: 1;
+                                font-weight: 600;
+                                font-family: 'Poppins', sans-serif;
+
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+
 
                     .image {
                         width: 50%;
