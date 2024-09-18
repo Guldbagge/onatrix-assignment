@@ -2,10 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using onatrix_assignment.Data;
 
-
-
-
-
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 string connectionString = builder.Configuration.GetConnectionString("umbracoDbDSN");

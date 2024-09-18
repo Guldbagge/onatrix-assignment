@@ -2348,6 +2348,19 @@ h6 {
 #solution-item .container .content .about-us .we-help-form h4, #solution-item .container .content .about-us .bg-primary h4 {
   color: var(--color-secondary);
 }
+#solution-item .container .content .about-us .we-help-form .success-message, #solution-item .container .content .about-us .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  height: 52px;
+  border-radius: 5px;
+}
 #solution-item .container .content .about-us .we-help-form .form form .form-input-group, #solution-item .container .content .about-us .bg-primary .form form .form-input-group {
   display: flex;
   flex-direction: column;

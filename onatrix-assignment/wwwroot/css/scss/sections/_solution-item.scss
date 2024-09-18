@@ -41,6 +41,20 @@
                         color: var(--color-secondary);
                     }
 
+                    .success-message {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #5cb85c;
+                        color: var(--color-light);
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                        margin-top: 1rem;
+                        height: 52px;
+                        border-radius: 5px;
+                    }
+
                     .form {
                         form {
 
@@ -82,13 +96,12 @@
                                 bottom: 2.65rem;
                                 right: 3rem;
                                 background-color: transparent;
-                                border:none;
+                                border: none;
                                 font-size: 1.8rem;
                                 color: var(--color-note);
                                 z-index: 1;
                                 font-weight: 600;
                                 font-family: 'Poppins', sans-serif;
-
                                 cursor: pointer;
                             }
                         }

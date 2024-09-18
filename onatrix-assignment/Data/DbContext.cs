@@ -10,5 +10,6 @@ namespace onatrix_assignment.Data
         }
 
         public DbSet<ContactFormEntry> ContactFormEntries { get; set; }
+        public DbSet<WeHelpModel> WeHelpModels { get; set; }
     }
 }
