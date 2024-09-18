@@ -2355,11 +2355,12 @@ h6 {
   background-color: #5cb85c;
   color: var(--color-light);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
-  margin-top: 1rem;
-  height: 52px;
-  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
 }
 #solution-item .container .content .about-us .we-help-form .form form .form-input-group, #solution-item .container .content .about-us .bg-primary .form form .form-input-group {
   display: flex;
@@ -2550,10 +2551,76 @@ h6 {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
-#projects .container .nav-content .bg-primary {
-  height: 300px;
+#projects .container .nav-content .we-help-form, #projects .container .nav-content .bg-primary {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+#projects .container .nav-content .we-help-form h4, #projects .container .nav-content .bg-primary h4 {
+  color: var(--color-secondary);
+}
+#projects .container .nav-content .we-help-form .success-message, #projects .container .nav-content .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group, #projects .container .nav-content .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group input, #projects .container .nav-content .we-help-form .form form .form-input-group select, #projects .container .nav-content .we-help-form .form form .form-input-group textarea, #projects .container .nav-content .bg-primary .form form .form-input-group input, #projects .container .nav-content .bg-primary .form form .form-input-group select, #projects .container .nav-content .bg-primary .form form .form-input-group textarea {
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-input-error, #projects .container .nav-content .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-invalid-input, #projects .container .nav-content .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#projects .container .nav-content .we-help-form .form form .form-input-group .form-valid-input, #projects .container .nav-content .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#projects .container .nav-content .we-help-form .form form .btn-we-help, #projects .container .nav-content .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#projects .container .nav-content .we-help-form .image, #projects .container .nav-content .bg-primary .image {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 #project-details {
@@ -2701,8 +2768,73 @@ h6 {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
-#project-details .container .nav-content .bg-primary {
-  height: 300px;
+#project-details .container .nav-content .we-help-form, #project-details .container .nav-content .bg-primary {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+#project-details .container .nav-content .we-help-form h4, #project-details .container .nav-content .bg-primary h4 {
+  color: var(--color-secondary);
+}
+#project-details .container .nav-content .we-help-form .success-message, #project-details .container .nav-content .bg-primary .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cb85c;
+  color: var(--color-light);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group, #project-details .container .nav-content .bg-primary .form form .form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group input, #project-details .container .nav-content .we-help-form .form form .form-input-group select, #project-details .container .nav-content .we-help-form .form form .form-input-group textarea, #project-details .container .nav-content .bg-primary .form form .form-input-group input, #project-details .container .nav-content .bg-primary .form form .form-input-group select, #project-details .container .nav-content .bg-primary .form form .form-input-group textarea {
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-input-error, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-input-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-invalid-input, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-invalid-input {
+  display: block;
+}
+#project-details .container .nav-content .we-help-form .form form .form-input-group .form-valid-input, #project-details .container .nav-content .bg-primary .form form .form-input-group .form-valid-input {
+  display: none;
+}
+#project-details .container .nav-content .we-help-form .form form .btn-we-help, #project-details .container .nav-content .bg-primary .form form .btn-we-help {
+  position: absolute;
+  bottom: 2.65rem;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-note);
+  z-index: 1;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+#project-details .container .nav-content .we-help-form .image, #project-details .container .nav-content .bg-primary .image {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
