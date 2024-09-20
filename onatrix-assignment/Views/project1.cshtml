@@ -34,6 +34,7 @@
     var ourProjectsProject4Headline = projects?.Value<string>("ourProjectsProject4Headline") ?? "";
     var ourProjectsProject4Date = projects?.Value<string>("ourProjectsProject4Date") ?? "";
 
+    var projectImage0 = Model?.Value<IPublishedContent>("projectImage0")?.Url() ?? "";
     var projectImage1 = Model?.Value<IPublishedContent>("projectImage1")?.Url() ?? "";
     var projectImage2 = Model?.Value<IPublishedContent>("projectImage2")?.Url() ?? "";
 
@@ -58,10 +59,10 @@
 <section id="project-details">
     <div class="container">
         <div class="project">
-            <p class="date"><i class="fa-regular fa-calendar-days"></i>@ourProjectsProject1Date</p>
+            <p class="date"><i class="fa-regular fa-calendar-days"></i>@Model.Value("projectDate")</p>
             <h6>@Model.Value("projectStartText")</h6>
             <div class="image">
-                <img src="@ourProjectsProject1Image" alt="Image of @ourProjectsProject1Headline">
+                <img src="@projectImage0" alt="Image of @ourProjectsProject1Headline">
             </div>
             
             @Model.Value("projectText1")
