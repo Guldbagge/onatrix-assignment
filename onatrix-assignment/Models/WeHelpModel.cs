@@ -7,7 +7,7 @@ namespace onatrix_assignment.Models
     public class WeHelpModel
     {
         [Key]
-        public int Id { get; set; } // Primärnyckel
+        public int Id { get; set; } 
 
         [Required]
         [EmailAddress]

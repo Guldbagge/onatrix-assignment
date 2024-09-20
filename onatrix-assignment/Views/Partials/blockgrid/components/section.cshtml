@@ -1,0 +1,16 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
+@using ContentModel = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters; // Rättade ValueConverter till ValueConverters
+
+var sectionBackgroundColorLabel = Model?.Content.Value<PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null; // Rättat till "Label"
+var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"bg-{sectionBackgroundColorLabel}" : ""; // Rättat till "sectionBackgroundColorLabel"
+
+<section>
+    @await Html.GetBlockGridHtmlAsync(Model)
+
+    @if (!string.IsNullOrEmpty(backgroundColorClass)) // Rättat till "backgroundColorClass"
+    {
+        <div class="background @backgroundColorClass"></div>
+    }
+</section>

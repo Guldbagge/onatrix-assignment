@@ -107,7 +107,9 @@ namespace onatrix_assignment.Controllers
 			_dbContext.SaveChanges();
 
 			TempData["success"] = "Your e-mail has been submitted successfully.";
-			return RedirectToCurrentUmbracoPage();
-		}
+
+            return RedirectToCurrentUmbracoPage();
+          
+        }
 	}
 }
