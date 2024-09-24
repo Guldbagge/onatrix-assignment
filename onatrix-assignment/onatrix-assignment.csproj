@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
     <PackageReference Include="Umbraco.Cms" Version="14.2.0" />
   </ItemGroup>
 
