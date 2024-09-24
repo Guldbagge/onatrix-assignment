@@ -1,15 +1,25 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
 @using ContentModel = Umbraco.Cms.Web.Common.PublishedModels;
-@using Umbraco.Cms.Core.PropertyEditors.ValueConverters; // Rättade ValueConverter till ValueConverters
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 
-var sectionBackgroundColorLabel = Model?.Content.Value<PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null; // Rättat till "Label"
-var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"bg-{sectionBackgroundColorLabel}" : ""; // Rättat till "sectionBackgroundColorLabel"
+@{
+    // Anta att färgvärdet är en sträng (t.ex. en hex-kod)
+    var sectionBackgroundColor = Model?.Content?.Value<string>("sectionBackgroundColor") ?? "";
+    var sectionBackgroundColorLabel = sectionBackgroundColor.ToLower();
+    
+    // Skapa en CSS-klass baserat på färgen
+    var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") 
+        ? $"bg-{sectionBackgroundColorLabel}" 
+        : "";
+}
 
-<section>
+<section class="@backgroundColorClass">
+    @* Render block item content *@
     @await Html.GetBlockGridHtmlAsync(Model)
 
-    @if (!string.IsNullOrEmpty(backgroundColorClass)) // Rättat till "backgroundColorClass"
+    @* Lägg till bakgrundsklass om den finns *@
+    @if (!string.IsNullOrEmpty(backgroundColorClass))
     {
         <div class="background @backgroundColorClass"></div>
     }

@@ -3,8 +3,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    Layout = null;
-    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.PageTitle ?? null;
 }
 
-@await Html.GetBlockGridHtmlAsync(Model.Layout)
+@await Html.GetBlockGridHtmlAsync(Model!.Layout)
