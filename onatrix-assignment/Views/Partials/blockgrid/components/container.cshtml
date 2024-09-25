@@ -2,6 +2,14 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModel = Umbraco.Cms.Web.Common.PublishedModels;
 
-<div class= "container">
-    @await Html.GetBlockGridHtmlAsync(Modle)
-</div>
+@{
+    // Hämtar BlockGridModel från BlockGridItem
+    var blockGridModel = Model.Content.Value<Umbraco.Cms.Core.Models.Blocks.BlockGridModel>("blockGridAlias");
+}
+
+@if (blockGridModel != null)
+{
+    <div class="block-grid-container">
+        @await Html.GetBlockGridHtmlAsync(blockGridModel)
+    </div>
+}

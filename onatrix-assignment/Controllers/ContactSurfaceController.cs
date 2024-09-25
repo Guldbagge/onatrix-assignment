@@ -101,7 +101,7 @@ namespace onatrix_assignment.Controllers
                         flex-direction: column;
                     }}
 
-                    header{{
+                    .logo{{
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -148,8 +148,8 @@ namespace onatrix_assignment.Controllers
                 </style>
             </head>
             <body>
-                <header>
-                    <div class=""logo"">
+                <div class='email-container'>
+                    <div class='email-content'><div class=""logo"">
                         <svg width=""145"" height=""44"" viewBox=""0 0 145 44"" fill=""none"" xmlns=""http://www.w3.org/2000/svg"">
                             <g clip-path=""url(#clip0_359_6549)"">
                             <path d=""M20.2118 0.08128C9.56335 0.925887 0.964268 9.45239 0.0802495 20.1105C-1.00468 32.9003 8.92043 43.6389 21.3771 44.0008V38.9734C21.3771 35.8765 19.6894 33.0209 16.957 31.5731C13.3003 29.6425 10.8492 25.6206 11.2108 21.116C11.6127 15.8071 15.9524 11.5438 21.2967 11.1818C27.5652 10.7796 32.8291 15.7668 32.8291 21.9606C32.8291 26.1032 30.4985 29.6827 27.083 31.5328C24.3104 33.021 22.6629 35.957 22.6629 39.1343V44.0008C34.5168 43.6791 44.0401 33.946 44.0401 22.0008C43.9999 9.29152 33.1506 -0.964424 20.2118 0.08128Z"" fill=""url(#paint0_linear_359_6549)""/>
@@ -190,10 +190,6 @@ namespace onatrix_assignment.Controllers
                             </defs>
                             </svg>
                     </div>
-                </header>
-
-                <div class='email-container'>
-                    <div class='email-content'>
                         <h1>Thank you for your message, {form.Name}!</h1>
                         <p>We have received your request and will get back to you as soon as possible.</p>
 
@@ -204,7 +200,7 @@ namespace onatrix_assignment.Controllers
                             <p><strong>Financial consulting:</strong> {form.Dropdown}</p>
                         </div>
 
-                        <p>If you have any further questions, feel free to contact us at: info@ontrix@domain.com</p>
+                        <p>If you have any further questions, feel free to contact us at: info@onatrix.com</p>
                     </div>
                 </div>
 
