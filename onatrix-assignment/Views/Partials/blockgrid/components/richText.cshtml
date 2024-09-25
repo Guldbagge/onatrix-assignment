@@ -3,11 +3,12 @@
 @using ContentModel = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    var paragraphContent = Model?.Content.Value<string>("paragraphContent");
+    var richText = Model?.Content.Value("richText");
 
 }
 
-@if (!string.IsNullOrEmpty(paragraphContent)) {
-    <p>@paragraphContent</p> 
-}
+@if (!string.IsNullOrEmpty(richText)) {
 
+    <div>@richText</div>
+
+}
