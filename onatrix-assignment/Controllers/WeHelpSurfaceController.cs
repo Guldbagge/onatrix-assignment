@@ -58,8 +58,10 @@ namespace onatrix_assignment.Controllers
             // Skicka e-postbekräftelse
             await SendConfirmationEmailAsync(form.Email);
 
-            TempData["success"] = "Your e-mail has been submitted successfully.";
-            return RedirectToCurrentUmbracoPage();
+            //TempData["success"] = "Your e-mail has been submitted successfully.";
+            //return RedirectToCurrentUmbracoPage();
+
+            return Redirect("/confirm");
         }
 
         private async Task SendConfirmationEmailAsync(string toEmail)

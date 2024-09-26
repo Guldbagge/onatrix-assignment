@@ -4,10 +4,13 @@
 
 @{
     var paragraphContent = Model?.Content.Value<string>("paragraphContent");
+    var richText = Model?.Content.Value("richText");
 
 }
 
 @if (!string.IsNullOrEmpty(paragraphContent)) {
     <p>@paragraphContent</p> 
+    <div>@richText</div>
+
 }
 
