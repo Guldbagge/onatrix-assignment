@@ -3,6 +3,7 @@
     .background {
         display: none;
 
+
         @include desktop {
             display: block;
             // background-image: url('../../../images/sl-home2.png');
@@ -15,34 +16,56 @@
             background-size: 1700px auto;
             background-position: center;
         }
+
+        .container {
+
+            @include desktop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+
+            .hero-content {
+                @include desktop {
+                    width: 50%;
+                }
+
+                .headline {
+                    line-height: 110%;
+
+                    @include desktop {
+
+                        margin-top: 5rem;
+                    }
+                }
+
+                .ingress {
+                    margin-top: 1.5rem;
+                }
+
+                div {
+                    .btn {
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#heru-slider-mobile {
+    display: block;
+
+    @include desktop {
+        display: none;
     }
 
     .container {
-        @include desktop {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .hero-content {
-            @include desktop {
-                width: 50%;
-            }
-
-            .headline {
-                margin-top: 5rem;
-                line-height: 110%
-            }
-
-            .ingress {
-                margin-top: 1.5rem;
-            }
-
-            div {
-                .btn {
-                    margin-bottom: 3rem;
-                }
+        .image {
+            img {
+                width: 100%;
+                height: auto;
             }
         }
     }

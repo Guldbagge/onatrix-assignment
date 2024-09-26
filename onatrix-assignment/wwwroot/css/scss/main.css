@@ -1453,26 +1453,43 @@ h6 {
   }
 }
 @media (min-width: 1400px) {
-  #heru-slider .container {
+  #heru-slider .background .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
 @media (min-width: 1400px) {
-  #heru-slider .container .hero-content {
+  #heru-slider .background .container .hero-content {
     width: 50%;
   }
 }
-#heru-slider .container .hero-content .headline {
-  margin-top: 5rem;
+#heru-slider .background .container .hero-content .headline {
   line-height: 110%;
 }
-#heru-slider .container .hero-content .ingress {
+@media (min-width: 1400px) {
+  #heru-slider .background .container .hero-content .headline {
+    margin-top: 5rem;
+  }
+}
+#heru-slider .background .container .hero-content .ingress {
   margin-top: 1.5rem;
 }
-#heru-slider .container .hero-content div .btn {
+#heru-slider .background .container .hero-content div .btn {
   margin-bottom: 3rem;
+}
+
+#heru-slider-mobile {
+  display: block;
+}
+@media (min-width: 1400px) {
+  #heru-slider-mobile {
+    display: none;
+  }
+}
+#heru-slider-mobile .container .image img {
+  width: 100%;
+  height: auto;
 }
 
 #about-us {
@@ -2392,7 +2409,7 @@ h6 {
 #solution-item .container .content .about-us .we-help-form .form form .btn-we-help, #solution-item .container .content .about-us .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
@@ -2604,7 +2621,7 @@ h6 {
 #projects .container .nav-content .we-help-form .form form .btn-we-help, #projects .container .nav-content .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
@@ -2820,7 +2837,7 @@ h6 {
 #project-details .container .nav-content .we-help-form .form form .btn-we-help, #project-details .container .nav-content .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
