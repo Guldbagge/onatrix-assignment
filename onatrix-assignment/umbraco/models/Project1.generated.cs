@@ -18,79 +18,9 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "project1"
-	/// <summary>Project 1</summary>
-	public partial interface IProject1 : IPublishedContent
-	{
-		/// <summary>Page Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string PageTitle { get; }
-
-		/// <summary>Project Baner - Headline</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProjectBanerHeadline { get; }
-
-		/// <summary>Project Banner - Link 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProjectBannerLink2 { get; }
-
-		/// <summary>Project Banner - Link Text 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProjectBannerLinkText2 { get; }
-
-		/// <summary>Project - Date</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProjectDate { get; }
-
-		/// <summary>Project - Image 0</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage0 { get; }
-
-		/// <summary>Project - Image 1</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage1 { get; }
-
-		/// <summary>Project - Image 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage2 { get; }
-
-		/// <summary>Project - Start Text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectStartText { get; }
-
-		/// <summary>Project - Text 1</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText1 { get; }
-
-		/// <summary>Project - Text 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText2 { get; }
-
-		/// <summary>Project - Text 3</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText3 { get; }
-
-		/// <summary>Project - Text 4</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText4 { get; }
-	}
-
 	/// <summary>Project 1</summary>
 	[PublishedModel("project1")]
-	public partial class Project1 : PublishedContentModel, IProject1
+	public partial class Project1 : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -125,12 +55,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => GetPageTitle(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Page Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetPageTitle(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "pageTitle");
+		public virtual string PageTitle => this.Value<string>(_publishedValueFallback, "pageTitle");
 
 		///<summary>
 		/// Project Baner - Headline
@@ -138,12 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectBanerHeadline")]
-		public virtual string ProjectBanerHeadline => GetProjectBanerHeadline(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project Baner - Headline</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProjectBanerHeadline(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "projectBanerHeadline");
+		public virtual string ProjectBanerHeadline => this.Value<string>(_publishedValueFallback, "projectBanerHeadline");
 
 		///<summary>
 		/// Project Banner - Link 2
@@ -151,12 +71,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectBannerLink2")]
-		public virtual string ProjectBannerLink2 => GetProjectBannerLink2(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project Banner - Link 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProjectBannerLink2(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "projectBannerLink2");
+		public virtual string ProjectBannerLink2 => this.Value<string>(_publishedValueFallback, "projectBannerLink2");
 
 		///<summary>
 		/// Project Banner - Link Text 2
@@ -164,12 +79,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectBannerLinkText2")]
-		public virtual string ProjectBannerLinkText2 => GetProjectBannerLinkText2(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project Banner - Link Text 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProjectBannerLinkText2(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "projectBannerLinkText2");
+		public virtual string ProjectBannerLinkText2 => this.Value<string>(_publishedValueFallback, "projectBannerLinkText2");
 
 		///<summary>
 		/// Project - Date
@@ -177,12 +87,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectDate")]
-		public virtual string ProjectDate => GetProjectDate(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Date</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProjectDate(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "projectDate");
+		public virtual string ProjectDate => this.Value<string>(_publishedValueFallback, "projectDate");
 
 		///<summary>
 		/// Project - Image 0
@@ -190,12 +95,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectImage0")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage0 => GetProjectImage0(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Image 0</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetProjectImage0(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "projectImage0");
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage0 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "projectImage0");
 
 		///<summary>
 		/// Project - Image 1
@@ -203,12 +103,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectImage1")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage1 => GetProjectImage1(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Image 1</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetProjectImage1(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "projectImage1");
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage1 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "projectImage1");
 
 		///<summary>
 		/// Project - Image 2
@@ -216,12 +111,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectImage2")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage2 => GetProjectImage2(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Image 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetProjectImage2(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "projectImage2");
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProjectImage2 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "projectImage2");
 
 		///<summary>
 		/// Project - Start Text
@@ -229,12 +119,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectStartText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectStartText => GetProjectStartText(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Start Text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetProjectStartText(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "projectStartText");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectStartText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "projectStartText");
 
 		///<summary>
 		/// Project - Text 1
@@ -242,12 +127,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectText1")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText1 => GetProjectText1(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Text 1</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetProjectText1(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "projectText1");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText1 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "projectText1");
 
 		///<summary>
 		/// Project - Text 2
@@ -255,12 +135,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectText2")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText2 => GetProjectText2(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Text 2</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetProjectText2(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "projectText2");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText2 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "projectText2");
 
 		///<summary>
 		/// Project - Text 3
@@ -268,12 +143,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectText3")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText3 => GetProjectText3(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Text 3</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetProjectText3(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "projectText3");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText3 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "projectText3");
 
 		///<summary>
 		/// Project - Text 4
@@ -281,11 +151,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectText4")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText4 => GetProjectText4(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Project - Text 4</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetProjectText4(IProject1 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "projectText4");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ProjectText4 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "projectText4");
 	}
 }
