@@ -74,12 +74,28 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ProjectBannerLink2 => this.Value<string>(_publishedValueFallback, "projectBannerLink2");
 
 		///<summary>
+		/// Project Banner Link 3
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("projectBannerLink3")]
+		public virtual string ProjectBannerLink3 => this.Value<string>(_publishedValueFallback, "projectBannerLink3");
+
+		///<summary>
 		/// Project Banner - Link Text 2
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("projectBannerLinkText2")]
 		public virtual string ProjectBannerLinkText2 => this.Value<string>(_publishedValueFallback, "projectBannerLinkText2");
+
+		///<summary>
+		/// Project Banner Text 3
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("projectBannerText3")]
+		public virtual string ProjectBannerText3 => this.Value<string>(_publishedValueFallback, "projectBannerText3");
 
 		///<summary>
 		/// Project - Date
