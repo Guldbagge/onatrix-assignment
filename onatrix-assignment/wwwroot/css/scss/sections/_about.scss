@@ -236,7 +236,7 @@
 
         @include desktop {
             padding-top: 3rem;
-            display: flex;     
+            display: flex;
             justify-content: center;
             align-items: center;
             height: 600px;
@@ -297,9 +297,13 @@
 
         .text {
             flex: 1;
+            padding-top: 1rem;
+
+            @include desktop {
+                padding-top: 0;
+            }
 
             h2 {
-
                 @include desktop {
                     margin-right: 11rem;
                 }
