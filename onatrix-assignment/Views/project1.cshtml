@@ -7,7 +7,11 @@
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
-    var projects = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "projectsPage") ?? null;
+   
+
+    var homePage = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "homePage");
+    var projects = homePage?.Children?.FirstOrDefault(x => x.ContentType.Alias == "projectsPage");
+
 
     var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";     
     var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";  

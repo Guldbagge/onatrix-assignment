@@ -2788,6 +2788,12 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex-direction: column;
+}
+@media (min-width: 1400px) {
+  #project-details .container .nav-content .recent-projects-content a {
+    flex-direction: row;
+  }
 }
 #project-details .container .nav-content .recent-projects-content a .image {
   flex: 1;
