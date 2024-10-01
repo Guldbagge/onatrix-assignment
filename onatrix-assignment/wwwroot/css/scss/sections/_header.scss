@@ -31,6 +31,12 @@
                     i {
                         color: var(--color-light);
                     }
+
+                    .fa-house {
+                        @include desktop {
+                            display: none;
+                        }
+                    }
                 }
             }
         }

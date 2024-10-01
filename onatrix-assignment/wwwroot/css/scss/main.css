@@ -216,6 +216,7 @@ h6 {
   align-items: center;
   gap: 1rem;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 .banner .content .links .home {
   text-decoration: none;
@@ -1325,6 +1326,11 @@ h6 {
 }
 #header .background-primary .container .social-links a i {
   color: var(--color-light);
+}
+@media (min-width: 1400px) {
+  #header .background-primary .container .social-links a .fa-house {
+    display: none;
+  }
 }
 #header .background-light {
   background-color: var(--color-gray);
@@ -2737,7 +2743,7 @@ h6 {
   height: auto;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -2rem;
   z-index: -1;
 }
 
@@ -2985,6 +2991,6 @@ h6 {
   height: auto;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -2rem;
   z-index: -1;
 }
