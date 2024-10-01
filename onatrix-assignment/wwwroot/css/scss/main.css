@@ -148,7 +148,12 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 25px;
+}
+@media (min-width: 1400px) {
+  h2 {
+    font-size: 40px;
+  }
 }
 
 h3 {
@@ -1322,7 +1327,14 @@ h6 {
   color: var(--color-light);
 }
 #header .background-light {
-  background-color: var(--color-light);
+  background-color: var(--color-gray);
+  margin-bottom: 1rem;
+}
+@media (min-width: 1400px) {
+  #header .background-light {
+    background-color: var(--color-light);
+    margin-bottom: 0;
+  }
 }
 #header .background-light .container {
   display: grid;
@@ -1361,10 +1373,16 @@ h6 {
   }
 }
 #header .background-light .container .search-icon {
-  justify-self: end;
+  display: none;
 }
-#header .background-light .container .search-icon a {
-  color: var(--color-primary);
+@media (min-width: 1400px) {
+  #header .background-light .container .search-icon {
+    display: block;
+    justify-self: end;
+  }
+  #header .background-light .container .search-icon a {
+    color: var(--color-primary);
+  }
 }
 
 /*#header{
@@ -1517,8 +1535,40 @@ h6 {
   opacity: 1;
   animation-name: fadeInOut;
   animation-duration: 4s;
-  /*animation-timing-function: ease-in-out; */
-  /* animation-iteration-count: infinite; */
+}
+#heru-slider-mobile .container div a .loader {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+}
+#heru-slider-mobile .container div a .loader::after,
+#heru-slider-mobile .container div a .loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+#heru-slider-mobile .container div a .loader::after {
+  animation-delay: 1s;
+}
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
 @keyframes fadeInOut {

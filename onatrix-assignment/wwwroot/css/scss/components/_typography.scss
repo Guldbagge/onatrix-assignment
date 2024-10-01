@@ -16,8 +16,12 @@ h1{
     font-size: 70px;
 }
 
-h2{
-    font-size: 40px;
+h2 {
+    font-size: 25px;
+    @include desktop {
+        font-size: 40px;
+    }
+    
 }
 
 h3{

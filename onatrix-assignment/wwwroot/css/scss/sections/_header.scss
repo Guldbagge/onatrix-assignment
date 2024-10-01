@@ -37,7 +37,13 @@
     }
 
     .background-light {
-        background-color: var(--color-light);
+        background-color: var(--color-gray);
+        margin-bottom: 1rem;
+
+        @include desktop {
+            background-color: var(--color-light);
+            margin-bottom: 0;
+        }
 
         .container {
             display: grid;
@@ -82,18 +88,21 @@
             }
 
             .search-icon {
-                justify-self: end;
+                display: none;
 
-                a {
-                    color: var(--color-primary);
+                @include desktop {
+                    display: block;
+                    justify-self: end;
+
+                    a {
+                        color: var(--color-primary);
+                    }
                 }
             }
         }
     }
 }
-
-
-/*#header{
+    /*#header{
 
     .background-primary{
         background-color: var(--color-primary);

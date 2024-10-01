@@ -30,7 +30,7 @@
 <section id="heru-slider" class="hero">
     <!-- <div class="background" style="background-image:url('images/sl-home2.png'); background-size: cover; background-position: 60%"></div> -->
     <!-- <div class="background"> -->
-    <div class="background" style="background-image:url(@backgroundImage);background-size: cover; background-position: 60%">
+    <div class="background" style="background-image:url(@backgroundImage); background-size: contain; background-position: center 22%; background-repeat: no-repeat;">
         <div class="container">
             <div class="hero-content">
                 <h1 class="headline">@Model?.Value("heroHeadline")</h1>
@@ -48,14 +48,14 @@
 
 <section id="heru-slider-mobile" class="hero">
         <div class="container">
-        <div class="image">
-                <h2 class="headline">@Model?.Value("heroHeadline")</h2>
-            <div class="image animated-border">
-                    <img src="@backgroundImage" alt="Alternate Text" />
+            <div class="image">
+                    <h2 class="headline">@Model?.Value("heroHeadline")</h2>
+                <div class="image animated-border">
+                        <img src="@backgroundImage" alt="Alternate Text" />
                 </div>
-                <p class="ingress">@Model?.Value("heroText")</p>
+                    <p class="ingress">@Model?.Value("heroText")</p>
                 <div>
-                    <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
+                <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")<span class="loader"></span></a>
                 </div>
 
             </div>
