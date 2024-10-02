@@ -1,10 +1,9 @@
-﻿#our-services{
-    padding-top: 3rem;
+﻿#our-services {
+    padding: 0;
+    margin: 0;
 
-    .bg{
-        padding-top: 1rem;
+    .bg {
         padding-bottom: 6rem;
-
 
         .container {
             display: flex;
@@ -37,7 +36,7 @@
                     text-decoration: none;
                     color: var(--color-primary);
                     background-color: var(--color-light);
-                    border: 1px solid var(--color-gray);
+                    border: 1px solid var(--color-note);
                     transition: transform 0.4s ease, box-shadow 0.4s ease;
 
                     &:hover {

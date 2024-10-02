@@ -148,7 +148,12 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 25px;
+}
+@media (min-width: 1400px) {
+  h2 {
+    font-size: 40px;
+  }
 }
 
 h3 {
@@ -167,27 +172,73 @@ h6 {
   font-size: 14px;
 }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+h1, h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none !important;
+  animation: slideUp 0.5s ease-in-out both;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
 .banner {
   position: relative;
 }
 .banner img {
   width: 100%;
-  height: 245px;
+  height: 2rem;
   object-fit: cover;
   object-position: center;
 }
+@media (min-width: 1400px) {
+  .banner img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
 .banner .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.banner .content h2 {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .banner .content h2 {
+    display: block;
+  }
+}
+@media (min-width: 1400px) {
+  .banner .content {
+    padding-bottom: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 .banner .content .links {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .banner .content .links .home {
   text-decoration: none;
@@ -1298,8 +1349,20 @@ h6 {
 #header .background-primary .container .social-links a i {
   color: var(--color-light);
 }
+@media (min-width: 1400px) {
+  #header .background-primary .container .social-links a .fa-house {
+    display: none;
+  }
+}
 #header .background-light {
-  background-color: var(--color-light);
+  background-color: var(--color-gray);
+  /*margin-bottom: 1rem;*/
+}
+@media (min-width: 1400px) {
+  #header .background-light {
+    background-color: var(--color-light);
+    margin-bottom: 0;
+  }
 }
 #header .background-light .container {
   display: grid;
@@ -1338,10 +1401,16 @@ h6 {
   }
 }
 #header .background-light .container .search-icon {
-  justify-self: end;
+  display: none;
 }
-#header .background-light .container .search-icon a {
-  color: var(--color-primary);
+@media (min-width: 1400px) {
+  #header .background-light .container .search-icon {
+    display: block;
+    justify-self: end;
+  }
+  #header .background-light .container .search-icon a {
+    color: var(--color-primary);
+  }
 }
 
 /*#header{
@@ -1446,35 +1515,95 @@ h6 {
     display: block;
   }
 }
-@media (min-width: 1700px) {
-  #heru-slider .background {
-    background-size: 1700px auto;
-    background-position: center;
-  }
-}
 @media (min-width: 1400px) {
-  #heru-slider .container {
+  #heru-slider .background .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
 @media (min-width: 1400px) {
-  #heru-slider .container .hero-content {
+  #heru-slider .background .container .hero-content {
     width: 50%;
   }
 }
-#heru-slider .container .hero-content .headline {
-  margin-top: 5rem;
+#heru-slider .background .container .hero-content .headline {
   line-height: 110%;
 }
-#heru-slider .container .hero-content .ingress {
+@media (min-width: 1400px) {
+  #heru-slider .background .container .hero-content .headline {
+    margin-top: 5rem;
+  }
+}
+#heru-slider .background .container .hero-content .ingress {
   margin-top: 1.5rem;
 }
-#heru-slider .container .hero-content div .btn {
+#heru-slider .background .container .hero-content div .btn {
   margin-bottom: 3rem;
 }
 
+#heru-slider-mobile {
+  display: block;
+}
+@media (min-width: 1400px) {
+  #heru-slider-mobile {
+    display: none;
+  }
+}
+#heru-slider-mobile .container .image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 1;
+  animation-name: fadeInOut;
+  animation-duration: 4s;
+}
+#heru-slider-mobile .container div a .loader {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+}
+#heru-slider-mobile .container div a .loader::after,
+#heru-slider-mobile .container div a .loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+#heru-slider-mobile .container div a .loader::after {
+  animation-delay: 1s;
+}
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #about-us {
   position: relative;
   margin-top: 3rem;
@@ -1529,6 +1658,25 @@ h6 {
 #about-us .container .form-container .request-box .request-text h4 {
   color: var(--color-secondary);
   margin: 0;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#about-us .container .form-container .request-box #spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 2rem;
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
 }
 #about-us .container .form-container .request-box .request-form {
   width: 100%;
@@ -2099,6 +2247,12 @@ h6 {
 }
 #next-project .container .text {
   flex: 1;
+  padding-top: 1rem;
+}
+@media (min-width: 1400px) {
+  #next-project .container .text {
+    padding-top: 0;
+  }
 }
 @media (min-width: 1400px) {
   #next-project .container .text h2 {
@@ -2221,10 +2375,10 @@ h6 {
 }
 
 #our-services {
-  padding-top: 3rem;
+  padding: 0;
+  margin: 0;
 }
 #our-services .bg {
-  padding-top: 1rem;
   padding-bottom: 6rem;
 }
 #our-services .bg .container {
@@ -2259,7 +2413,7 @@ h6 {
   text-decoration: none;
   color: var(--color-primary);
   background-color: var(--color-light);
-  border: 1px solid var(--color-gray);
+  border: 1px solid var(--color-note);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 #our-services .bg .container .solution a:hover {
@@ -2392,7 +2546,7 @@ h6 {
 #solution-item .container .content .about-us .we-help-form .form form .btn-we-help, #solution-item .container .content .about-us .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
@@ -2432,7 +2586,12 @@ h6 {
 }
 
 #projects {
-  padding-top: 3rem;
+  padding-top: 1rem;
+}
+@media (min-width: 1400px) {
+  #projects {
+    padding-top: 3rem;
+  }
 }
 @media (min-width: 1400px) {
   #projects .container {
@@ -2604,7 +2763,7 @@ h6 {
 #projects .container .nav-content .we-help-form .form form .btn-we-help, #projects .container .nav-content .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
@@ -2619,7 +2778,7 @@ h6 {
   height: auto;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -2rem;
   z-index: -1;
 }
 
@@ -2633,20 +2792,31 @@ h6 {
     gap: 1rem;
   }
 }
-#project-details .container .project {
-  grid-column: span 7;
+@media (min-width: 1400px) {
+  #project-details .container .project {
+    grid-column: span 7;
+  }
 }
 #project-details .container .project .date {
   color: var(--color-note);
+}
+#project-details .container .project .date .fa-calendar-days {
+  margin-right: 0.5rem;
 }
 #project-details .container .project h6 {
   color: var(--color-primary);
 }
 #project-details .container .project .image {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  margin-bottom: 2rem;
+  display: none;
+}
+@media (min-width: 1400px) {
+  #project-details .container .project .image {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 2rem;
+  }
 }
 #project-details .container .project .image img {
   position: absolute;
@@ -2666,8 +2836,12 @@ h6 {
     margin-top: 2rem;
   }
 }
+#project-details .container .project .image-text .image-smal {
+  display: none;
+}
 @media (min-width: 1400px) {
   #project-details .container .project .image-text .image-smal {
+    display: block;
     flex: 1;
     width: 100%;
     height: auto;
@@ -2684,12 +2858,18 @@ h6 {
   }
 }
 #project-details .container .project .tags {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
+  display: none;
+}
+@media (min-width: 1400px) {
+  #project-details .container .project .tags {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
 }
 #project-details .container .project .tags .tag {
   display: inline-block;
@@ -2707,11 +2887,15 @@ h6 {
   color: var(--color-light);
 }
 #project-details .container .nav-content {
-  grid-column: span 3;
   border-left: 1px solid var(--color-note);
   padding-left: 1rem;
   margin-bottom: 8rem;
   margin-top: 2rem;
+}
+@media (min-width: 1400px) {
+  #project-details .container .nav-content {
+    grid-column: span 3;
+  }
 }
 #project-details .container .nav-content .recent-projects-content a {
   border-bottom: 1px solid var(--color-note);
@@ -2721,6 +2905,12 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex-direction: column;
+}
+@media (min-width: 1400px) {
+  #project-details .container .nav-content .recent-projects-content a {
+    flex-direction: row;
+  }
 }
 #project-details .container .nav-content .recent-projects-content a .image {
   flex: 1;
@@ -2772,6 +2962,7 @@ h6 {
   position: relative;
   z-index: 1;
   padding: 2rem;
+  margin-top: 1rem;
 }
 #project-details .container .nav-content .we-help-form h4, #project-details .container .nav-content .bg-primary h4 {
   color: var(--color-secondary);
@@ -2820,7 +3011,7 @@ h6 {
 #project-details .container .nav-content .we-help-form .form form .btn-we-help, #project-details .container .nav-content .bg-primary .form form .btn-we-help {
   position: absolute;
   bottom: 2.65rem;
-  right: 3rem;
+  right: 2rem;
   background-color: transparent;
   border: none;
   font-size: 1.8rem;
@@ -2835,6 +3026,6 @@ h6 {
   height: auto;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -2rem;
   z-index: -1;
 }

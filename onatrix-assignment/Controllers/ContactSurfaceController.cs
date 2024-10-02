@@ -66,6 +66,9 @@ namespace onatrix_assignment.Controllers
             _dbContext.ContactFormEntries.Add(contactFormEntry);
             _dbContext.SaveChanges();
 
+            //wait 2 seconds before sending the email to test spinner
+            await Task.Delay(2000);
+
             //To servicebus
             await SendConfirmationEmailAsync(form.Email, form);
 
