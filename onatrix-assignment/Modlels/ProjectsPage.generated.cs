@@ -242,6 +242,54 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string OurProjectsProject4Text => this.Value<string>(_publishedValueFallback, "ourProjectsProject4Text");
 
 		///<summary>
+		/// Our Projects Project 5 - Button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Button")]
+		public virtual string OurProjectsProject5Button => this.Value<string>(_publishedValueFallback, "ourProjectsProject5Button");
+
+		///<summary>
+		/// Our Projects Project 5 - Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Date")]
+		public virtual string OurProjectsProject5Date => this.Value<string>(_publishedValueFallback, "ourProjectsProject5Date");
+
+		///<summary>
+		/// Our Projects Project 5 - Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Headline")]
+		public virtual string OurProjectsProject5Headline => this.Value<string>(_publishedValueFallback, "ourProjectsProject5Headline");
+
+		///<summary>
+		/// Our Projects Project 5 - Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Image")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops OurProjectsProject5Image => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "ourProjectsProject5Image");
+
+		///<summary>
+		/// Our Projects Project 5 - Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Link")]
+		public virtual string OurProjectsProject5Link => this.Value<string>(_publishedValueFallback, "ourProjectsProject5Link");
+
+		///<summary>
+		/// Our Projects Project 5 - Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ourProjectsProject5Text")]
+		public virtual string OurProjectsProject5Text => this.Value<string>(_publishedValueFallback, "ourProjectsProject5Text");
+
+		///<summary>
 		/// Page Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]

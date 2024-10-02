@@ -4,7 +4,7 @@
     @include desktop {
         padding-top: 3rem;
     }
-    
+
 
     .container {
 
@@ -29,10 +29,10 @@
                     grid-template-columns: repeat(2, 1fr);
                     gap: 2rem;
                 }
-                
+
                 &:hover .image img {
-                    transform: translateY(-3px) rotate(-2deg); 
-                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+                    transform: translateY(-3px) rotate(-2deg);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
                 }
 
 
@@ -49,7 +49,7 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        transition: transform 0.1s ease, box-shadow 0.1s ease; 
+                        transition: transform 0.1s ease, box-shadow 0.1s ease;
                     }
                 }
 
@@ -87,12 +87,13 @@
                 border-bottom: none;
             }
 
-            .pagnaition {
+            .pagination {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
                 margin-bottom: 3rem;
+                margin-top: 3rem;
 
                 a {
                     display: inline;
@@ -101,27 +102,35 @@
                     color: var(--color-primary);
                     background-color: var(--color-light);
                     padding: 0.5rem 1rem;
-                    border: 1px solid var(--color-note);
+                    border: 1px solid var(--color-gray);
                     border-radius: 999px;
                     transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+                    &.active {
+                        border: 1px solid var(--color-note);
+                    }
+
+                    &.prev,
+                    &.next {
+                        border: none;
+                        color: var(--color-dark);
+                    }
+
+                    &.disabled {
+                        pointer-events: none;
+                        color: var(--color-note);
+                        opacity: 0.6;
+
+                        &:hover {
+                            transform: none;
+                            box-shadow: none;
+                        }
+                    }
 
                     &:hover {
                         transform: translateY(-3px);
                         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
                     }
-                }
-
-                .prev {
-                    border: none;
-                    color: var(--color-note);
-                }
-
-                .two {
-                    border: none;
-                }
-
-                .next {
-                    border: none;
                 }
             }
         }
