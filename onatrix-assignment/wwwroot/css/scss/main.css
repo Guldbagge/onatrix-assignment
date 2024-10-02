@@ -172,6 +172,28 @@ h6 {
   font-size: 14px;
 }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+h1, h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none !important;
+  animation: slideUp 0.5s ease-in-out both;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
 .banner {
   position: relative;
 }
@@ -1493,12 +1515,6 @@ h6 {
     display: block;
   }
 }
-@media (min-width: 1700px) {
-  #heru-slider .background {
-    background-size: 1700px auto;
-    background-position: center;
-  }
-}
 @media (min-width: 1400px) {
   #heru-slider .background .container {
     display: flex;
@@ -1642,6 +1658,25 @@ h6 {
 #about-us .container .form-container .request-box .request-text h4 {
   color: var(--color-secondary);
   margin: 0;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#about-us .container .form-container .request-box #spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 2rem;
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
 }
 #about-us .container .form-container .request-box .request-form {
   width: 100%;

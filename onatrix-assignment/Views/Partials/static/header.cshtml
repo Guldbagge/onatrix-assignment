@@ -1,6 +1,14 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
 @{
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
@@ -26,6 +34,8 @@
     var headerLink2Trimmed = headerLink2.TrimEnd('/');
     var headerLink3Trimmed = headerLink3.TrimEnd('/');
     var headerLink4Trimmed = headerLink4.TrimEnd('/');
+
+     var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
 
 }
 
@@ -60,10 +70,13 @@
                 <a href="/"><img src="@siteLogo" alt="Logo Image"></a>
             </div>
             <div class="links">
-                <a href="@headerLink1" class="@(currentPageUrl == headerLink1Trimmed ? "active" : "")">@headerLinkText1</a>
-                <a href="@headerLink2" class="@(currentPageUrl == headerLink2Trimmed ? "active" : "")">@headerLinkText2</a>
-                <a href="@headerLink3" class="@(currentPageUrl == headerLink3Trimmed ? "active" : "")">@headerLinkText3</a>
-                <a href="@headerLink4" class="@(currentPageUrl == headerLink4Trimmed ? "active" : "")">@headerLinkText4</a>
+  @if (selection?.Length > 0)
+                {
+                    @foreach (var item in selection)
+                    {
+                        <a class="@(item.IsAncestorOrSelf(Model) ? "nav-link active" : "nav-link")" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    }
+                }
             </div>
             <div class="search-icon">
                 <a href="#"><i class="fas fa-search"></i></a>

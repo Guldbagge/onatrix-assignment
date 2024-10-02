@@ -28,9 +28,7 @@
 }
 
 <section id="heru-slider" class="hero">
-    <!-- <div class="background" style="background-image:url('images/sl-home2.png'); background-size: cover; background-position: 60%"></div> -->
-    <!-- <div class="background"> -->
-    <div class="background" style="background-image:url(@backgroundImage); background-size: contain; background-position: center 22%; background-repeat: no-repeat;">
+    <div class="background" style="background-image:url(@backgroundImage); background-size: 100%; background-position: center 22%; background-repeat: no-repeat;">
         <div class="container">
             <div class="hero-content">
                 <h1 class="headline">@Model?.Value("heroHeadline")</h1>
@@ -43,7 +41,6 @@
         </div>
     </div>
 </section>
-
 
 
 <section id="heru-slider-mobile" class="hero">
@@ -61,7 +58,6 @@
             </div>
 
         </div>
-   
 </section>
 
 <section id="about-us" class="about-us">
@@ -88,6 +84,10 @@
                 <div class="request-text">
                     <h4>Request a call back</h4>
                    
+                </div>
+
+                <div id="spinner" style="display: none;">
+                    <i class="fa fa-spinner fa-spin" style="font-size: 24px;"></i>
                 </div>
 
                 <div class="request-form">

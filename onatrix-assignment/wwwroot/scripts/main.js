@@ -16,3 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+document.getElementById('contact-form').addEventListener('submit', function () {
+
+    document.getElementById('spinner').style.display = 'block';
+});
