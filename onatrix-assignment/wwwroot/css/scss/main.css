@@ -1355,14 +1355,8 @@ h6 {
   }
 }
 #header .background-light {
-  background-color: var(--color-gray);
-  /*margin-bottom: 1rem;*/
-}
-@media (min-width: 1400px) {
-  #header .background-light {
-    background-color: var(--color-light);
-    margin-bottom: 0;
-  }
+  background-color: var(--color-light);
+  margin-bottom: 0;
 }
 #header .background-light .container {
   display: grid;
