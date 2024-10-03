@@ -1,0 +1,19 @@
+﻿@model List<Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>
+
+<h2>Sökresultat för "@Context.Request.Query["q"]":</h2>
+
+@if (Model == null || Model.Count == 0)
+{
+    <p>Inga resultat hittades.</p>
+}
+else
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@item.Url()">@item.Name</a>
+            </li>
+        }
+    </ul>
+}

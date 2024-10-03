@@ -9,7 +9,6 @@ string connectionString = builder.Configuration.GetConnectionString("umbracoDbDS
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 
-
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
