@@ -240,5 +240,37 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("serviceSolution6Text")]
 		public virtual string ServiceSolution6Text => this.Value<string>(_publishedValueFallback, "serviceSolution6Text");
+
+		///<summary>
+		/// Service - Solution 7 - Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("serviceSolution7Headline")]
+		public virtual string ServiceSolution7Headline => this.Value<string>(_publishedValueFallback, "serviceSolution7Headline");
+
+		///<summary>
+		/// Service - Solution 7 - Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("serviceSolution7Image")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ServiceSolution7Image => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "serviceSolution7Image");
+
+		///<summary>
+		/// Service - Solution 7 - Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("serviceSolution7Link")]
+		public virtual string ServiceSolution7Link => this.Value<string>(_publishedValueFallback, "serviceSolution7Link");
+
+		///<summary>
+		/// Service - Solution 7 - Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("serviceSolution7Text")]
+		public virtual string ServiceSolution7Text => this.Value<string>(_publishedValueFallback, "serviceSolution7Text");
 	}
 }

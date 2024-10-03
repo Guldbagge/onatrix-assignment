@@ -67,39 +67,3 @@
     }
 }
 
-.pagnaition {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-
-    a {
-        text-decoration: none;
-        font-weight: 600;
-        color: var(--color-primary);
-        background-color: var(--color-light);
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--color-gray);
-        border-radius: 999px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-    }
-
-    .prev {
-        border: none;
-        color: var(--color-gray);
-    }
-
-    .two {
-        border: none;
-    }
-
-    .next {
-        border: none;
-    }
-}

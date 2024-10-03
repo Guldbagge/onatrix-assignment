@@ -1,6 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@using Microsoft.AspNetCore.Http
+
 @{
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "servicesSection") ?? null;
@@ -35,8 +37,38 @@
     var serviceSolution6Headline = settings?.Value<string>("serviceSolution6Headline") ?? "";
     var serviceSolution6Text = settings?.Value<string>("serviceSolution6Text") ?? "";
 
+    var serviceSolution7Image = settings?.Value<IPublishedContent>("serviceSolution7Image")?.Url() ?? "";
+    var serviceSolution7Link = settings?.Value<string>("serviceSolution7Link") ?? "";
+    var serviceSolution7Headline = settings?.Value<string>("serviceSolution7Headline") ?? "";
+    var serviceSolution7Text = settings?.Value<string>("serviceSolution7Text") ?? "";
+
     var currentPageUrl = Model.Url();
     var isServicesPage = currentPageUrl.Contains("/services");
+
+
+    var pageSize = 6;
+    var pageParam = Context.Request.Query["page"].ToString();
+    var currentPage = 1;
+
+
+    if (!string.IsNullOrWhiteSpace(pageParam) && int.TryParse(pageParam, out int page))
+    {
+        currentPage = page > 0 ? page : 1;
+    }
+    
+    var services = new List<dynamic>
+    {
+        new { Image = serviceSolution1Image, Link = serviceSolution1Link, Headline = serviceSolution1Headline, Text = serviceSolution1Text },
+        new { Image = serviceSolution2Image, Link = serviceSolution2Link, Headline = serviceSolution2Headline, Text = serviceSolution2Text },
+        new { Image = serviceSolution3Image, Link = serviceSolution3Link, Headline = serviceSolution3Headline, Text = serviceSolution3Text },
+        new { Image = serviceSolution4Image, Link = serviceSolution4Link, Headline = serviceSolution4Headline, Text = serviceSolution4Text },
+        new { Image = serviceSolution5Image, Link = serviceSolution5Link, Headline = serviceSolution5Headline, Text = serviceSolution5Text },
+        new { Image = serviceSolution6Image, Link = serviceSolution6Link, Headline = serviceSolution6Headline, Text = serviceSolution6Text },
+        new { Image = serviceSolution7Image, Link = serviceSolution7Link, Headline = serviceSolution7Headline, Text = serviceSolution7Text }
+    };
+
+
+    var paginatedServices = services.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
 
 
 }
@@ -51,7 +83,20 @@
             <h2>@Model?.Value("servicesTitleSecondRow")</h2>
             
             <div class="solution">
-                <a href="@serviceSolution1Link">
+                @foreach (var service in paginatedServices)
+                {
+                    <a href="@service.Link">
+                        <div class="solution-item">
+                            <h5>@service.Headline</h5>
+                            <div class="image">
+                                <img src="@service.Image" alt="Image of @service.Headline">
+                            </div>
+                            <p>@service.Text</p>
+                        </div>
+                    </a>
+                }
+          
+               @*  <a href="@serviceSolution1Link">
                     <div class="solution-item">
                         <h5>@serviceSolution1Headline</h5>
                         <div class="image">
@@ -108,10 +153,21 @@
                         </div>
                         <p>@serviceSolution6Text</p>
                     </div>
-                </a>
+                </a> *@
 
             </div>
         </div>
     </div>
 </section>
+
+<div class="pagination">
+    <a href="?page=@(currentPage - 1)" class="prev @(currentPage > 1 ? "" : "disabled")">Prev</a>
+
+    @for (var i = 1; i <= Math.Ceiling((double)services.Count / pageSize); i++)
+    {
+        <a href="?page=@i" class="@(i == currentPage ? "active" : "") @($"page-{i}")">@i</a>
+    }
+
+    <a href="?page=@(currentPage + 1)" class="next @(currentPage < Math.Ceiling((double)services.Count / pageSize) ? "" : "disabled")">Next</a>
+</div>
         

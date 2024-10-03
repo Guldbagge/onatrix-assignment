@@ -2426,38 +2426,6 @@ h6 {
   padding: 1rem;
 }
 
-.pagnaition {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-.pagnaition a {
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--color-primary);
-  background-color: var(--color-light);
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--color-gray);
-  border-radius: 999px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.pagnaition a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-.pagnaition .prev {
-  border: none;
-  color: var(--color-gray);
-}
-.pagnaition .two {
-  border: none;
-}
-.pagnaition .next {
-  border: none;
-}
-
 #solution-item .container {
   display: flex;
   justify-content: center;
@@ -2577,6 +2545,46 @@ h6 {
 }
 #solution-item .container .content .main-content p {
   line-height: 2;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.pagination a {
+  display: inline;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 999px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.pagination a.active {
+  border: 1px solid var(--color-note);
+}
+.pagination a.prev, .pagination a.next {
+  border: none;
+  color: var(--color-dark);
+}
+.pagination a.disabled {
+  pointer-events: none;
+  color: var(--color-note);
+  opacity: 0.6;
+}
+.pagination a.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+.pagination a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 #projects {
