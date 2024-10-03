@@ -43,13 +43,10 @@
     }
 
     .background-light {
-        background-color: var(--color-gray);
-        /*margin-bottom: 1rem;*/
 
-        @include desktop {
             background-color: var(--color-light);
             margin-bottom: 0;
-        }
+     
 
         .container {
             display: grid;

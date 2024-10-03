@@ -1,24 +1,46 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@using Microsoft.AspNetCore.Http
 
 @{
-	Layout = "mainLayout.cshtml";
+    Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
 
-    var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";     
-    var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";  
-    var servicesBannerLink1 = settings?.Value<string>("servicesBannerLink1") ?? "";     
+    var servicesBannerBackground = settings?.Value<IPublishedContent>("servicesBannerBackground")?.Url() ?? "";
+    var servicesBannerLinkText1 = settings?.Value<string>("servicesBannerLinkText1") ?? "";
+    var servicesBannerLink1 = settings?.Value<string>("servicesBannerLink1") ?? "";
 
-    var ourProjectsProject1Image = Model?.Value<IPublishedContent>("ourProjectsProject1Image")?.Url() ?? "";   
+    var ourProjectsProject1Image = Model?.Value<IPublishedContent>("ourProjectsProject1Image")?.Url() ?? "";
     var ourProjectsProject2Image = Model?.Value<IPublishedContent>("ourProjectsProject2Image")?.Url() ?? "";
     var ourProjectsProject3Image = Model?.Value<IPublishedContent>("ourProjectsProject3Image")?.Url() ?? "";
     var ourProjectsProject4Image = Model?.Value<IPublishedContent>("ourProjectsProject4Image")?.Url() ?? "";
-     
+    var ourProjectsProject5Image = Model?.Value<IPublishedContent>("ourProjectsProject5Image")?.Url() ?? "";
 
+    var pageSize = 4;
+    var pageParam = Context.Request.Query["page"].ToString();
+    var currentPage = 1; 
+
+
+    if (!string.IsNullOrWhiteSpace(pageParam) && int.TryParse(pageParam, out int page))
+    {
+        currentPage = page > 0 ? page : 1; 
+    }
+
+    var projects = new List<dynamic>
+    {
+        new { Image = ourProjectsProject1Image, Headline = Model!.Value("ourProjectsProject1Headline"), Date = Model.Value("ourProjectsProject1Date"), Text = Model.Value("ourProjectsProject1Text"), Link = Model.Value("ourProjectsProject1Link") },
+        new { Image = ourProjectsProject2Image, Headline = Model!.Value("ourProjectsProject2Headline"), Date = Model.Value("ourProjectsProject2Date"), Text = Model.Value("ourProjectsProject2Text"), Link = Model.Value("ourProjectsProject2Link") },
+        new { Image = ourProjectsProject3Image, Headline = Model!.Value("ourProjectsProject3Headline"), Date = Model.Value("ourProjectsProject3Date"), Text = Model.Value("ourProjectsProject3Text"), Link = Model.Value("ourProjectsProject3Link") },
+        new { Image = ourProjectsProject4Image, Headline = Model!.Value("ourProjectsProject4Headline"), Date = Model.Value("ourProjectsProject4Date"), Text = Model.Value("ourProjectsProject4Text"), Link = Model.Value("ourProjectsProject4Link") },
+        new { Image = ourProjectsProject5Image, Headline = Model!.Value("ourProjectsProject5Headline"), Date = Model.Value("ourProjectsProject5Date"), Text = Model.Value("ourProjectsProject5Text"), Link = Model.Value("ourProjectsProject5Link") }
+    };
+
+    var pagedProjects = projects.Skip((currentPage - 1) * pageSize).Take(pageSize);
 }
+
 
 
 <section id="contact" class="banner bg-gray">
@@ -40,7 +62,7 @@
     <div class="container">
 
         <div class="our-projects">
-            <a href="@Model.Value("ourProjectsProject1Link")">
+@*             <a href="@Model.Value("ourProjectsProject1Link")">
                 <div class="image">
                     <img src="@ourProjectsProject1Image" alt="">
                 </div>
@@ -111,14 +133,59 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </a> *@
 
-            <div class="pagnaition">
-                <a href="#" class="prev">Prev</a>
-                <a href="#" class="one">1</a>
-                <a href="#" class="two">2</a>
-                <a href="#" class="next">Next</a>
+
+            @foreach (var project in pagedProjects)
+            {
+                <a href="@project.Link">
+                    <div class="image">
+                        <img src="@project.Image" alt="">
+                    </div>
+                    <div class="project-text">
+                        <div class="text">
+                            <h4>@project.Headline</h4>
+                            <p class="date"><i class="fa-regular fa-calendar-days"></i> @project.Date</p>
+                            <p>@project.Text</p>
+                        </div>
+                        <div class="button">
+                            <div class="btn-light">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+
+@*             <div class="pagination">
+                @if (currentPage > 1)
+                {
+                    <a href="?page=@(currentPage - 1)" class="prev">Prev</a>
+                }
+
+                @for (var i = 1; i <= Math.Ceiling((double)projects.Count / pageSize); i++)
+                {
+                    <a href="?page=@i" class="@(i == currentPage ? "active" : "") @($"page-{i}")">@i</a>
+                }
+
+                @if (currentPage < Math.Ceiling((double)projects.Count / pageSize))
+                {
+                    <a href="?page=@(currentPage + 1)" class="next">Next</a>
+                }
+            </div> *@
+
+            <div class="pagination">
+                <a href="?page=@(currentPage - 1)" class="prev @(currentPage > 1 ? "" : "disabled")">Prev</a>
+
+                @for (var i = 1; i <= Math.Ceiling((double)projects.Count / pageSize); i++)
+                {
+                    <a href="?page=@i" class="@(i == currentPage ? "active" : "") @($"page-{i}")">@i</a>
+                }
+
+                <a href="?page=@(currentPage + 1)" class="next @(currentPage < Math.Ceiling((double)projects.Count / pageSize) ? "" : "disabled")">Next</a>
             </div>
+
+
         </div>
 
         
