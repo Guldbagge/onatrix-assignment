@@ -70,7 +70,7 @@
                 <a href="/"><img src="@siteLogo" alt="Logo Image"></a>
             </div>
             <div class="links">
-  @if (selection?.Length > 0)
+                @if (selection?.Length > 0)
                 {
                     @foreach (var item in selection)
                     {
@@ -84,3 +84,14 @@
         </div>
     </div>
 </header>
+
+<div class="search-overlay">
+    <div class="search-box">
+        <button class="close-search">&times;</button>
+        <p>Enter the first letter of the keyword, e.g. "pr"</p>
+        <form method="get" action="/search">
+            <input type="text" name="query" placeholder="Search here..." required>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+</div>

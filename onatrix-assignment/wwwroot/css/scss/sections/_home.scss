@@ -238,6 +238,10 @@
                                 border-radius: 5px;
                             }
 
+                            .form-input {
+                                color: var(--color-dark);
+                            }
+    
                             .form-input-error {
                                 color: red;
                                 font-size: 0.8rem;
@@ -399,69 +403,86 @@
         }
     }
 
-    #success {
-        .bg-primary {
-            padding-top: 6rem;
+#success {
+    .bg-primary {
+        padding-top: 6rem;
 
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                position: relative;
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
 
-                .success-stories {
-                    @include desktop {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 4rem;
-                    }
+            .bg-image {
+                display: none;
 
-                    .success-story {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;
-                        flex: 1;
+                @include desktop {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
 
-                        @include desktop {
-                            padding-bottom: 35rem;
-                        }
-
-                        h1 {
-                            color: var(--color-secondary);
-                            margin: 0;
-                        }
-
-                        h5 {
-                            text-align: center;
-                        }
-                    }
-                }
-
-                .image {
-                    display: none;
-
-                    @include desktop {
-                        display: block;
+                    img {
                         width: 100%;
                         height: auto;
-                        padding: 5rem;
-                        position: absolute;
-                        top: 15rem;
-                        right: 0;
-                        z-index: 1;
+                    }
+                }
+            }
 
-                        img {
-                            width: 100%;
-                            height: auto;
-                        }
+            .success-stories {
+                @include desktop {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 4rem;
+                }
+
+                .success-story {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    flex: 1;
+
+                    @include desktop {
+                        padding-bottom: 35rem;
+                    }
+
+                    h1 {
+                        color: var(--color-secondary);
+                        margin: 0;
+                    }
+
+                    h5 {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .image {
+                display: none;
+
+                @include desktop {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    padding: 5rem;
+                    position: absolute;
+                    top: 15rem;
+                    right: 0;
+                    z-index: 1;
+
+                    img {
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
         }
     }
+}
 
     #our-projects {
         margin-top: 2rem;

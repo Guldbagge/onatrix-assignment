@@ -1395,85 +1395,60 @@ h6 {
   }
 }
 #header .background-light .container .search-icon {
+  justify-self: end;
+}
+#header .background-light .container .search-icon a {
+  color: var(--color-primary);
+}
+
+.search-overlay {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
 }
-@media (min-width: 1400px) {
-  #header .background-light .container .search-icon {
-    display: block;
-    justify-self: end;
-  }
-  #header .background-light .container .search-icon a {
-    color: var(--color-primary);
-  }
+
+.search-overlay.active {
+  display: flex;
 }
 
-/*#header{
-
-    .background-primary{
-        background-color: var(--color-primary);
-
-        .container{
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 40px;
-
-            .text{
-                p{
-                    padding: 0; 
-                    color: var(--color-light); 
-                    font-size: 0.8rem;
-                }
-            }
-            .social-links{
-                display: flex;
-                gap: 1rem;
-                a{
-                    i{color: var(--color-light);}
-                }
-            }
-        }
-    }
-
-    .background-light{
-        background-color: var(--color-light);
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-            height: 60px; 
-
-            .logo{
-                a{
-                    img{
-                        height: 80%;
-                        width: 80%;
-                    }
-                }
-            }
-
-            .links{
-                a{
-                    color: var(--color-primary);
-                    font-weight: 600;
-                    text-decoration: none;
-                }
-                display: flex;
-                gap: 3rem;
-            }
-            .search-icon{
-                justify-self: end;
-                a{
-                    color: var(--color-primary);
-                }
-            }
-        }
-    }
-
+.search-box {
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
 }
-*/
+.search-box p {
+  color: white;
+}
+.search-box input, .search-box select, .search-box textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 52px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-style: oblique;
+  border: 1px solid var(--color-note);
+  border-radius: 5px;
+}
+
+.close-search {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+}
+
 #footer .container {
   display: flex;
   justify-content: start;
@@ -1697,6 +1672,9 @@ h6 {
   border: 1px solid var(--color-note);
   border-radius: 5px;
 }
+#about-us .container .form-container .request-box .request-form form .form-input-group .form-input {
+  color: var(--color-dark);
+}
 #about-us .container .form-container .request-box .request-form form .form-input-group .form-input-error {
   color: red;
   font-size: 0.8rem;
@@ -1835,6 +1813,22 @@ h6 {
   align-items: center;
   flex-direction: column;
   position: relative;
+}
+#success .bg-primary .container .bg-image {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #success .bg-primary .container .bg-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  #success .bg-primary .container .bg-image img {
+    width: 100%;
+    height: auto;
+  }
 }
 @media (min-width: 1400px) {
   #success .bg-primary .container .success-stories {
@@ -2335,6 +2329,9 @@ h6 {
   font-style: oblique;
   border: 1px solid var(--color-note);
   border-radius: 5px;
+}
+#map .container .request-box .request-form form .form-input-group .form-input {
+  color: var(--color-dark);
 }
 #map .container .request-box .request-form form .form-input-group .form-input-error {
   color: red;

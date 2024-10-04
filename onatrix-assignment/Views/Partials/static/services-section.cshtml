@@ -160,14 +160,20 @@
     </div>
 </section>
 
-<div class="pagination">
-    <a href="?page=@(currentPage - 1)" class="prev @(currentPage > 1 ? "" : "disabled")">Prev</a>
+@{
+    var isHomePage = Context.Request.Path == "/";
+}
 
-    @for (var i = 1; i <= Math.Ceiling((double)services.Count / pageSize); i++)
-    {
-        <a href="?page=@i" class="@(i == currentPage ? "active" : "") @($"page-{i}")">@i</a>
-    }
+@if (!isHomePage)
+{
+    <div class="pagination">
+        <a href="?page=@(currentPage - 1)" class="prev @(currentPage > 1 ? "" : "disabled")">Prev</a>
 
-    <a href="?page=@(currentPage + 1)" class="next @(currentPage < Math.Ceiling((double)services.Count / pageSize) ? "" : "disabled")">Next</a>
-</div>
-        
+        @for (var i = 1; i <= Math.Ceiling((double)services.Count / pageSize); i++)
+        {
+            <a href="?page=@i" class="@(i == currentPage ? "active" : "") @($"page-{i}")">@i</a>
+        }
+
+        <a href="?page=@(currentPage + 1)" class="next @(currentPage < Math.Ceiling((double)services.Count / pageSize) ? "" : "disabled")">Next</a>
+    </div>
+}
