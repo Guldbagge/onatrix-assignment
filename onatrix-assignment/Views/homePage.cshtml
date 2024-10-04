@@ -14,6 +14,7 @@
     var serviceSolution6Image = Model?.Value<IPublishedContent>("serviceSolution6Image")?.Url() ?? "";
     var weAreImage = Model?.Value<IPublishedContent>("weAreImage")?.Url() ?? "";
     var successImage = Model?.Value<IPublishedContent>("successImage")?.Url() ?? "";
+    var dotImage = Model?.Value<IPublishedContent>("dotImage")?.Url() ?? "";  
     var projectsProject1Image = Model?.Value<IPublishedContent>("projectsProject1Image")?.Url() ?? "";
     var projectsProject2Image = Model?.Value<IPublishedContent>("projectsProject2Image")?.Url() ?? "";
     var projectsProject3Image = Model?.Value<IPublishedContent>("projectsProject3Image")?.Url() ?? "";
@@ -153,6 +154,10 @@
 <section id="success" class="success">
     <div class="bg-primary">
         <div class="container">
+            <div class="bg-image">
+                <img src="@dotImage" alt="">
+            </div>
+            
             <h6>@Model?.Value("successHeadline")</h6>
             <h2>@Model?.Value("successTitle")</h2>
             <div class="success-stories">

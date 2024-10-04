@@ -2,8 +2,7 @@
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.Common.Controllers;
-
-using Umbraco.Cms.Core.Logging; // This line is already there
+using Umbraco.Cms.Core.Logging; 
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -17,7 +16,7 @@ namespace onatrix_assignment.Controllers
     public class SearchController : SurfaceController
     {
         private readonly IPublishedContentQuery _contentQuery;
-        private readonly IProfilingLogger _logger; // Use IProfilingLogger
+        private readonly IProfilingLogger _logger; 
 
         public SearchController(
           IUmbracoContextAccessor umbracoContextAccessor,
@@ -25,31 +24,33 @@ namespace onatrix_assignment.Controllers
           ServiceContext services,
 
           AppCaches appCaches,
-          IProfilingLogger
-     logger, // Inject IProfilingLogger
+          IProfilingLogger logger, 
           IPublishedUrlProvider publishedUrlProvider,
           IPublishedContentQuery contentQuery)
           : base(umbracoContextAccessor, databaseFactory, services, appCaches, logger, publishedUrlProvider)
         {
             _contentQuery = contentQuery;
-            _logger = logger; // Assign IProfilingLogger to a local variable
+            _logger = logger; 
         }
 
         [HttpGet("search")]
-  public IActionResult Search(string query)
-  {
-    if (string.IsNullOrWhiteSpace(query))
-    {
-      return View("SearchResults", null);
+        public IActionResult Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return View("SearchResults", null);
+            }
+
+            var lowerQuery = query.ToLower(); 
+
+            var results = _contentQuery
+                .ContentAtRoot()
+                .DescendantsOrSelf<IPublishedContent>()
+                .Where(x => x.Name.ToLower().Contains(lowerQuery)) 
+                .ToList();
+
+            return View("SearchResults", results);
+        }
+
     }
-
-    var results = _contentQuery
-      .ContentAtRoot()
-      .DescendantsOrSelf<IPublishedContent>()
-      .Where(x => x.Name.Contains(query))
-      .ToList();
-
-    return View("SearchResults", results);
-  }
-}
 }
