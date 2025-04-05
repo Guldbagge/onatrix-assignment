@@ -15,6 +15,3 @@ Onatrix Assignment is built with Umbraco, a powerful and flexible CMS platform. 
 
 ## Installation
 1. Clone the repository
-2. Configure the database connection string in appsettings.json
-3. Migration dotnet ef database update
-4. Run the application: dotnet run
